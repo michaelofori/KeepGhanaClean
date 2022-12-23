@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1047195311848",
+    "project_id": "keepghanasignin",
+    "storage_bucket": "keepghanasignin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1047195311848:android:0b4ead48578e6c6472b35d",
+        "android_client_info": {
+          "package_name": "com.example.keepghanaclean"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1047195311848-q55gv7b4it96uk41ue4a1nvhbfqjhhp9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUH_QLB5PWwAdff484v07WpCJWsMOA-v4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1047195311848-q55gv7b4it96uk41ue4a1nvhbfqjhhp9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
