@@ -10,12 +10,13 @@ import 'package:splash_screen_view/SplashScreenView.dart';
 import 'package:keepghanaclean/model/user_model.dart';
 import 'package:keepghanaclean/pages/login_screen.dart';
 import 'pages/home.dart';
+import 'pages/settings.dart';
 
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(Splash());
+  runApp(const Splash());
 }
 
 class Splash extends StatelessWidget {
@@ -174,10 +175,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 color: Colors.white,
               ),
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => SettingsPage()),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SettingsPage()),
+                );
               },
             )
           ],
@@ -199,10 +200,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             icon: Icon(Icons.home_filled),
             label: 'Home',
           ),
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.message),
-          //   label: 'Messages',
-          // ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message),
+            label: 'Messages',
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_sharp),
             label: 'Profile',
@@ -245,7 +246,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               );
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MyStatefulWidget()),
+                MaterialPageRoute(builder: (context) => const MyStatefulWidget()),
               );
             },
             leading: const Icon(Icons.home),
