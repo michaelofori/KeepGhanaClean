@@ -1,115 +1,331 @@
+/**
+ * @author Michael Ofori
+ */
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:keepghanaclean/pages/onboarding.dart';
+import 'package:keepghanaclean/pages/profile.dart';
+import 'package:splash_screen_view/SplashScreenView.dart';
+import 'package:keepghanaclean/model/user_model.dart';
+import 'package:keepghanaclean/pages/login_screen.dart';
+import 'pages/home.dart';
+import 'pages/settings.dart';
 
-void main() {
-  runApp(const MyApp());
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const Splash());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Splash extends StatelessWidget {
+  const Splash({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+    Widget example1 = SplashScreenView(
+      navigateRoute: const Onboarding(),
+      duration: 4000,
+      imageSize: 150,
+      imageSrc: 'assets/images/splash.png',
+      text: "The Middlemen",
+      textType: TextType.NormalText,
+      textStyle: TextStyle(
+        color: Color.fromARGB(255, 42, 23, 207),
+        fontSize: 30.0,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      backgroundColor: Color.fromARGB(255, 14, 13, 13),
+    );
+
+    return MaterialApp(
+      title: 'Splash screen Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: 'Roboto',
+      ),
+      home: example1,
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+  static const String _title = 'The Garage';
+  // This widget is the root of the application.
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  Widget build(BuildContext context) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: _title,
+        theme: ThemeData(
+          fontFamily: 'Roboto',
+        ),
+      );
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({Key? key}) : super(key: key);
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+  @override
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+}
+
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
+  List pages = [
+    const HomeScreen(),
+    //const Messages(),
+    const Profile(),
+  ];
+
+  User? user = FirebaseAuth.instance.currentUser;
+  UserModel loggedInUser = UserModel();
+
+  bool homeColor = true;
+  bool cartColor = false;
+  bool aboutColor = false;
+  bool contactUsColor = false;
+  bool logOut = false;
+  int currentIndex = 0;
+
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
+  _signOut() async {
+    await _firebaseAuth.signOut();
+  }
+
+  void onTap(int index) {
+    setState(
+      () {
+        currentIndex = index;
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      key: _key,
+      appBar: [
+        AppBar(
+          title: const Text(
+            "The Middlemen Garage",
+            style: TextStyle(color: Colors.black),
+          ),
+          centerTitle: true,
+          elevation: 0.1,
+          backgroundColor: Color.fromARGB(255, 182, 58, 58),
+          leading: IconButton(
+            icon: const Icon(
+              Icons.menu,
+              color: Colors.black,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            onPressed: () {
+              _key.currentState?.openDrawer();
+            },
+          ),
+          actions: <Widget>[
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.search,
+                  color: Colors.black,
+                )),
+          ],
+          automaticallyImplyLeading: false,
+        ),
+        //second app
+        // AppBar(
+        //   title: const Text(
+        //     "The Middlemen Garage",
+        //     style: TextStyle(color: Colors.black),
+        //   ),
+        //   centerTitle: true,
+        //   elevation: 0.1,
+        //   backgroundColor: Color.fromARGB(255, 182, 58, 58),
+        //   leading: IconButton(
+        //     icon: const Icon(
+        //       Icons.menu,
+        //       color: Colors.black,
+        //     ),
+        //     onPressed: () {
+        //       _key.currentState?.openDrawer();
+        //     },
+        //   ),
+        //   actions: <Widget>[
+        //     IconButton(
+        //         onPressed: () {},
+        //         icon: const Icon(
+        //           Icons.search,
+        //           color: Colors.black,
+        //         )),
+        //   ],
+        //   automaticallyImplyLeading: false,
+        // ),
+        //profile app
+        AppBar(
+          title: const Text("Profile"),
+          // automaticallyImplyLeading: false,
+          // centerTitle: true,\
+          backgroundColor: Color.fromARGB(255, 182, 58, 58),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(
+                Icons.settings,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SettingsPage()),
+                );
+              },
+            )
           ],
         ),
+      ][currentIndex],
+      drawer: _myDrawer(),
+      body: pages[currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onTap,
+        currentIndex: currentIndex,
+        type: BottomNavigationBarType.fixed,
+        iconSize: 30,
+        selectedFontSize: 0,
+        unselectedFontSize: 0,
+        elevation: 0,
+        showUnselectedLabels: false,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_filled),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message),
+            label: 'Messages',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_sharp),
+            label: 'Profile',
+          ),
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+
+  Widget _myDrawer() {
+    return Drawer(
+      child: ListView(
+        children: <Widget>[
+          UserAccountsDrawerHeader(
+            decoration:
+                const BoxDecoration(color: Color.fromARGB(255, 190, 61, 61)),
+            accountName: Text(
+              user!.displayName ?? "user name",
+              style: const TextStyle(color: Colors.black),
+            ),
+            accountEmail: Text(
+              user!.email!,
+              style: TextStyle(
+                color: Colors.black54,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          ListTile(
+            selected: homeColor,
+            onTap: () {
+              setState(
+                () {
+                  homeColor = true;
+                  cartColor = false;
+                  aboutColor = false;
+                  contactUsColor = false;
+                  logOut = false;
+                },
+              );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const MyStatefulWidget()),
+              );
+            },
+            leading: const Icon(Icons.home),
+            title: const Text("Home"),
+          ),
+          // ListTile(
+          //   selected: cartColor,
+          //   onTap: () {
+          //     Navigator.pop(context);
+          //     setState(
+          //       () {
+          //         currentIndex = 1;
+          //         cartColor = true;
+          //         homeColor = false;
+          //         aboutColor = false;
+          //         contactUsColor = false;
+          //         logOut = false;
+          //       },
+          //     );
+          //   },
+          //   leading: const Icon(Icons.message_outlined),
+          //   title: const Text("Messages"),
+          // ),
+          ListTile(
+            selected: aboutColor,
+            onTap: () {
+              Navigator.pop(context);
+              setState(
+                () {
+                  aboutColor = true;
+                  homeColor = false;
+                  cartColor = false;
+                  contactUsColor = false;
+                  logOut = false;
+                },
+              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => uploadCars()),
+              // );
+            },
+            leading: const Icon(Icons.upload_rounded),
+            title: const Text("Upload Cars"),
+          ),
+          // ListTile(
+          //   selected: contactUsColor,
+          //   onTap: () {
+          //     setState(
+          //       () {
+          //         contactUsColor = true;
+          //         homeColor = false;
+          //         cartColor = false;
+          //         aboutColor = false;
+          //         logOut = false;
+          //       },
+          //     );
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(builder: (context) => Profile()),
+          //     );
+          //   },
+          //   leading: const Icon(Icons.contact_page_outlined),
+          //   title: const Text("Profile"),
+          // ),
+          ListTile(
+            leading: const Icon(Icons.logout),
+            title: const Text("Log out"),
+            onTap: () async {
+              await _signOut();
+              if (_firebaseAuth.currentUser == null) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
+                );
+              }
+            },
+          ),
+        ],
+      ),
     );
   }
 }
