@@ -50,6 +50,12 @@ dependencies:
   carbon_icons: ^0.0.1+2
   url_launcher: ^6.1.7
   flutter_facebook_auth: ^5.0.6
+  hexcolor: ^3.0.1
+  dots_indicator: ^2.1.0
+  awesome_notifications: ^0.7.4+1
+
+flutter_app_name:
+  name: "Keep Ghana Clean"
 
 dev_dependencies:
   flutter_test:
@@ -74,9 +80,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/
+    - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

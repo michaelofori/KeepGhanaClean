@@ -109,7 +109,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       appBar: [
         AppBar(
           title: const Text(
-            "The Middlemen Garage",
+            "Keep Ghana Clean",
             style: TextStyle(color: Colors.black),
           ),
           centerTitle: true,
