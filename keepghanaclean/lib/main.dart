@@ -128,7 +128,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             IconButton(
                 onPressed: () {},
                 icon: const Icon(
-                  Icons.search,
+                  Icons.camera,
+                  color: Colors.black,
+                )),
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.share,
                   color: Colors.black,
                 )),
           ],
