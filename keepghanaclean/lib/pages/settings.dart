@@ -20,7 +20,7 @@ class SettingsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Settings'),
-        backgroundColor: Color.fromARGB(255, 182, 58, 58),
+        backgroundColor: Color.fromARGB(255, 46, 90, 184),
       ),
       body: Container(
         child: Column(

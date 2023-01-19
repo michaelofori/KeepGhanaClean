@@ -16,7 +16,7 @@ class AboutUsPage extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 182, 58, 58),
+        backgroundColor: Color.fromARGB(255, 46, 90, 184),
         actions: const [
           Icon(
             Icons.ac_unit,

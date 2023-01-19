@@ -10,7 +10,7 @@ class InstructionPage extends StatelessWidget {
     TextStyle? bodyText1 = Theme.of(context).textTheme.bodyText1;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 182, 58, 58),
+        backgroundColor: Color.fromARGB(255, 46, 90, 184),
         title: const AppBarTitle(
           leadingTitle: 'FAQs',
         ),

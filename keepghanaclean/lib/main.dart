@@ -51,7 +51,7 @@ class Splash extends StatelessWidget {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  static const String _title = 'The Garage';
+  static const String _title = 'Keep Ghana Clean';
   // This widget is the root of the application.
   @override
   Widget build(BuildContext context) => MaterialApp(
@@ -114,7 +114,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
           centerTitle: true,
           elevation: 0.1,
-          backgroundColor: Color.fromARGB(255, 182, 58, 58),
+          backgroundColor: Color.fromARGB(255, 46, 90, 184),
           leading: IconButton(
             icon: const Icon(
               Icons.menu,
@@ -167,7 +167,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           title: const Text("Profile"),
           // automaticallyImplyLeading: false,
           // centerTitle: true,\
-          backgroundColor: Color.fromARGB(255, 182, 58, 58),
+          backgroundColor: Color.fromARGB(255, 46, 90, 184),
           actions: <Widget>[
             IconButton(
               icon: const Icon(
@@ -201,8 +201,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.message),
-            label: 'Messages',
+            icon: Icon(Icons.local_activity),
+            label: 'Activity',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_sharp),
@@ -219,7 +219,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         children: <Widget>[
           UserAccountsDrawerHeader(
             decoration:
-                const BoxDecoration(color: Color.fromARGB(255, 190, 61, 61)),
+                const BoxDecoration(color: Color.fromARGB(255, 37, 47, 138)),
             accountName: Text(
               user!.displayName ?? "user name",
               style: const TextStyle(color: Colors.black),
@@ -289,7 +289,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               // );
             },
             leading: const Icon(Icons.upload_rounded),
-            title: const Text("Upload Cars"),
+            title: const Text("Upload Feed"),
           ),
           // ListTile(
           //   selected: contactUsColor,

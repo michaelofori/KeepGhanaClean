@@ -5,8 +5,6 @@ import 'package:keepghanaclean/pages/login_screen.dart';
 import 'package:onboarding_screen/onboarding_screen.dart';
 
 
-
-
 class Onboarding extends StatefulWidget {
   const Onboarding({Key? key}) : super(key: key);
 
@@ -39,13 +37,22 @@ class _OnboardingState extends State<Onboarding> {
 
       /// This [mySlides] must not be more than 5.
       mySlides: [
-    _SliderModel(
-      imageAssetPath: Image.asset(
-        'assets/images/splash.png',
-        scale: 1,
+   _SliderModel(
+      imageAssetPath: SvgPicture.asset('assets/icons/on1.svg',
+      width: size.width * 0.8,
+      height: size.height *0.5,
+      fit: BoxFit.fitHeight,
       ),
-      title: 'Middlemen Garage',
-      desc: 'Discover people and cars',
+      title: 'Ease',
+      desc: 'Stress free platform to search for cars',
+    ), 
+     _SliderModel(
+      imageAssetPath: Image.asset(
+        'assets/icons/on2.svg',
+        scale: 2,
+      ),
+       title: 'Recycle',
+      desc: 'Lets Save the Planet',
       minTitleFontSize: 10,
       descStyle: const TextStyle(
         fontSize: 12,
@@ -59,7 +66,7 @@ class _OnboardingState extends State<Onboarding> {
       ),
     ),
     _SliderModel(
-      imageAssetPath: SvgPicture.asset('assets/icons/s1.svg',
+      imageAssetPath: SvgPicture.asset('assets/icons/on3.svg',
       width: size.width * 0.8,
       height: size.height *0.5,
       fit: BoxFit.fitHeight,
@@ -67,33 +74,38 @@ class _OnboardingState extends State<Onboarding> {
       title: 'Ease',
       desc: 'Stress free platform to search for cars',
     ),
-    _SliderModel(
-      imageAssetPath: SvgPicture.asset('assets/icons/s2.svg',
-      
-      width: size.width * 0.8,
-      height: size.height *0.5,
-      fit: BoxFit.fitHeight,),
-      title: 'Discover new cars',
-      desc: 'Drive the best cars',
+     _SliderModel(
+      imageAssetPath: Image.asset(
+        'assets/icons/on4.svg',
+        scale: 2,
+      ),
+       title: 'Recycle',
+      desc: 'Lets Save the Planet',
+      minTitleFontSize: 10,
+      descStyle: const TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: Colors.black,
+      ),
+      titleStyle: const TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w400,
+        color: Colors.black,
+      ),
     ),
     _SliderModel(
-      imageAssetPath: SvgPicture.asset('assets/icons/s3.svg',
-      
+      imageAssetPath: SvgPicture.asset('assets/icons/on5.svg',
       width: size.width * 0.8,
       height: size.height *0.5,
-      fit: BoxFit.fitHeight,),
-      title: 'Garages',
-      desc: 'Link up with the best garages in Accra',
+      fit: BoxFit.fitHeight,
+      ),
+      title: 'Ease',
+      desc: 'Stress free platform to search for cars',
     ),
-    _SliderModel(
-      imageAssetPath: SvgPicture.asset('assets/icons/s4.svg',
-      
-      width: size.width * 0.8,
-      height: size.height *0.5,
-      fit: BoxFit.fitHeight,),
-      title: 'Discover cars',
-      desc: 'Don\'t stress we\'ve got you... ',
-    ),
+  
+  
+   
+   
   ],
       controller: _controller,
       slideIndex: 0,
