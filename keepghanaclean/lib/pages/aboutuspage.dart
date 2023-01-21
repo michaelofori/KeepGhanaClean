@@ -43,7 +43,7 @@ class AboutUsPage extends StatelessWidget {
             SizedBox(
                 height: 150,
                 child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/splash.png"),
+                  backgroundImage: AssetImage("assets/images/1024.png"),
                   radius: 70.0,
                 ),
               ),

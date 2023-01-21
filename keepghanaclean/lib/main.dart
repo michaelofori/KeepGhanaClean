@@ -28,8 +28,8 @@ class Splash extends StatelessWidget {
       navigateRoute: const Onboarding(),
       duration: 4000,
       imageSize: 150,
-      imageSrc: 'assets/images/splash.png',
-      text: "The Middlemen",
+      imageSrc: 'assets/images/1024.png',
+      text: "Keep Ghana Clean",
       textType: TextType.NormalText,
       textStyle: TextStyle(
         color: Color.fromARGB(255, 42, 23, 207),
@@ -128,7 +128,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             IconButton(
                 onPressed: () {},
                 icon: const Icon(
-                  Icons.camera,
+                  Icons.photo_camera_outlined,
                   color: Colors.black,
                 )),
             IconButton(

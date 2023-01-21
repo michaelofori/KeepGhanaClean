@@ -1,57 +1,1001 @@
-<?xml version="1.0"?>
-<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg3512" viewBox="0 0 80 80" version="1.0" y="0" x="0">
-  <g id="layer1">
-    <g id="g3535" transform="matrix(.96875 0 0 .98751 1.2501 -.25079)" fill-rule="evenodd">
-      <path id="path2742" d="m54.962 37.281l17.138-10.262 7.678 14.835c1.855 8.105-8.309 11.079-16.47 10.596l-8.346-15.169z"/>
-      <path id="path2743" d="m51.067 47.877l-9.013 15.95 9.013 16.173 0.223-6.469h8.235c3.005 0.26 6.899-1.711 8.346-4.573l10.572-19.408c-3.487 3.458-7.971 4.35-13.131 4.35h-13.911l-0.334-6.023z"/>
-      <path id="path2751" d="m30.928 28.212l-17.269-10.037 9.213-13.93c6.17-5.5589 13.698 1.9041 17.237 9.29l-9.181 14.677z"/>
-      <path id="path2752" d="m42.062 26.482l18.288 0.157 9.732-15.749-5.751 2.945-3.997-7.2167c-1.231-2.7593-4.84-5.216-8.04-5.0942l-22.06 0.156c4.708 1.3773 7.663 4.8732 10.168 9.3959l6.752 12.19-5.092 3.216z"/>
-      <path id="path2753" d="m0.44401 27.381l5.3508 4.101-5.036 9.464c-2.5181 4.365 1.8077 8.616 4.5639 10.096 2.7133 1.457 6.9243 1.63 10.859 1.577l7.082-11.357 5.35 2.839-9.285-16.878-18.885 0.158z"/>
-      <path id="path2754" d="m1.2309 49.307l11.488 20.821c2.309 2.892 6.663 3.576 11.174 3.471h12.118v-19.718l-22.977-0.158c-3.5671 0.211-8.2359-0.525-11.803-4.416z"/>
-    </g>
-  </g>
-  <metadata>
-    <rdf:RDF>
-      <cc:Work>
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
-        <dc:publisher>
-          <cc:Agent rdf:about="http://openclipart.org/">
-            <dc:title>Openclipart</dc:title>
-          </cc:Agent>
-        </dc:publisher>
-        <dc:title>Recycling Symbol</dc:title>
-        <dc:date>2008-07-18T19:10:57</dc:date>
-        <dc:description>clip art, clipart, image, line art, line art, media, png, public domain, recycle, recycle, sign, sign, silhouette, silhouette, svg, symbol, symbol, </dc:description>
-        <dc:source>http://openclipart.org/detail/17937/recycling-symbol-by-aj</dc:source>
-        <dc:creator>
-          <cc:Agent>
-            <dc:title>AJ</dc:title>
-          </cc:Agent>
-        </dc:creator>
-        <dc:subject>
-          <rdf:Bag>
-            <rdf:li>clip art</rdf:li>
-            <rdf:li>clipart</rdf:li>
-            <rdf:li>image</rdf:li>
-            <rdf:li>line art</rdf:li>
-            <rdf:li>media</rdf:li>
-            <rdf:li>png</rdf:li>
-            <rdf:li>public domain</rdf:li>
-            <rdf:li>recycle</rdf:li>
-            <rdf:li>sign</rdf:li>
-            <rdf:li>silhouette</rdf:li>
-            <rdf:li>svg</rdf:li>
-            <rdf:li>symbol</rdf:li>
-          </rdf:Bag>
-        </dc:subject>
-      </cc:Work>
-      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
-        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
-        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
-        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
-      </cc:License>
-    </rdf:RDF>
-  </metadata>
-</svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    xmlns:cc="http://web.resource.org/cc/"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    viewBox="0 0 943 972"
+  >
+  <path
+      style="fill:#ffffff"
+      d="m0 0v972h943v-972h-943z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m374 21l1 1-1-1z"
+  />
+  <path
+      style="fill:#33a101"
+      d="m74 473h193v-319c38.94 20.73 76.16 47.72 113 72 8.92 5.88 18.02 11.52 27 17.31 2.92 1.88 8.54 4.07 9.47 7.78 0.95 3.77-3.6 9.66-5.22 12.91-5.37 10.73-12.92 21.44-16.25 33l115-56.25 31-15.5 11.97-6.89 1.61-11.36 1.44-37 4.98-120c-10.24 8.279-18.29 21.59-26.35 32-2.76 3.565-6.85 11.408-11.67 12.273-3.22 0.579-7.24-2.647-9.98-4.025-9-4.529-18.22-8.726-27-13.672-25.71-14.494-52.61-27.595-79-40.823-7.85-3.933-22.18-14.896-31-14.241-7.48 0.555-15.28 6.633-22 9.627-18.15 8.089-36.22 16.731-54 25.614-51.47 25.72-104.51 48.317-156 73.997-16.45 8.21-33.15 16.47-50 23.83-5.042 2.2-16.927 5.56-19.397 10.81-2.987 6.35-0.603 18.63-0.603 25.61v62 220z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m372 22l1 1-1-1m8 0l1 1-1-1m2 1l1 1-1-1m2 1l1 1-1-1m-31 7l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m334 40l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m415 40l1 1-1-1m-83 1l1 1-1-1m85 0l1 1-1-1m2 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m421 43l1 1-1-1z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m561 49v8h1l-1-8z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m313 50l1 1-1-1m244 3l1 1-1-1m-107 5l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m553 58l1 1-1-1m-259 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m452 59l1 1-1-1m-160 1l1 1-1-1m162 0l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m456 61l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m546 67l1 1-1-1m-273 2l1 1-1-1z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m560 69v7h1l-1-7z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m542 72l1 1-1-1m-57 4l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m560 76v6h1l-1-6z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m487 77l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m254 78l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m489 78l1 1-1-1m-237 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m491 79l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m531 86l1 1-1-1m-298 2l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m527 91l1 1-1-1z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m559 92v7h1l-1-7z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m520 94l1 1-1-1m2 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m214 97l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m212 98l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m559 99v9h1l-1-9z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m193 107l1 1-1-1z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m558 115v8h1l-1-8z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m174 116l1 1-1-1m384 7v8h1l-1-8z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m153 126l1 1-1-1z"
+  />
+  <path
+      style="fill:#ffffff"
+      d="m100 439l139 1v-226-57c0-5.66 2.03-16.06-2.32-20.39-12.11-12.09-21.61-5.3-34.68 0.53-23.45 10.45-46.67 21.46-70 32.17-7.48 3.43-25.52 8.11-29.97 15.08-2.907 4.55-1.03 14.37-1.03 19.61v50c0 61.71-1 123.35-1 185z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m225 129l1 1-1-1m-9 1l1 1-1-1m-2 1l1 1-1-1m19 3l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m134 135l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m203 136l1 1-1-1m-2 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m239 138v302h1v-213-62l-1-27z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m557 138v8h1l-1-8z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m188 143l1 1-1-1m-75 2l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m557 146v7h1l-1-7z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m175 149l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m94 154l1 1-1-1m173 0v319h1v-216-67l1-36h-2z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m162 155l1 1-1-1m111 2l1 1-1-1m-124 4l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m75 163l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m73 164v309h1v-218-63l-1-28m211 0l1 1-1-1z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m556 164v5h1l-1-5z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m287 166l1 1-1-1z"
+  />
+  <path
+      style="fill:#33a101"
+      d="m645 166l-25.6 44-42 71-17.8 30-5.6 11.9 16 11.9 48 29.15 142 86.25 44 26.8 23 13v2l-67 35.69-70 38.31-29-55h-1l-3.04 50-4.96 89-2 33 1.03 11.61 11.97 7.14 28 14.5 107 53.75c-4.84-16.8-15.21-35.88-24-51l108-52.75 28-14 11.97-6.89 1.03-20.36v-52-183-48l-1.03-18.37-19.97-12.21-50-28.57-143-81.7-42-24-22-11.15z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m136 167l1 1-1-1m515 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m556 169v7h1l-1-7z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m642 171l1 1-1-1m16 1l1 1-1-1m-535 1l1 1-1-1m175 0l1 1-1-1m341 3l1 1-1-1m26 0l1 1-1-1m-555 3l1 1-1-1m199 1l1 1-1-1m363 0l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m636 181l1 1-1-1m-324 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m100 184v90h1v-62l-1-28m455 0v6h1l-1-6z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m679 184l1 1-1-1m7 4l1 1-1-1m-363 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m555 190v7h1l-1-7z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m693 192l1 1-1-1m7 4l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m337 198l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m626 198l1 1-1-1m81 2l1 1-1-1m-84 3l1 1-1-1m91 1l1 1-1-1m-366 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m554 207v6h1l-1-6z"
+  />
+  <path
+      style="fill:#ffffff"
+      d="m655 207c-15.61 25.5-30.62 51.36-46 77-3.62 6.04-16.13 20.83-15 27.9 0.75 4.7 10.34 8.3 14 10.5l44 26.4 157 94.2 39 23.4c4.16 2.5 10.86 8.52 16 7.3 5.57-1.32 24.11-10.67 26.4-15.91 3.14-7.23-0.31-18.21-0.4-25.79-0.25-20.99 0-42 0-63 0-7.11 2.9-22.42-1.03-28.47-3.26-5.03-12.85-8.34-17.97-11.25l-44-25.13c-38.3-21.86-76.66-43.63-115-65.43-17.94-10.2-37.34-25.5-57-31.72z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m721 208l1 1-1-1m-69 3l1 1-1-1m76 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m554 213v6h1l-1-6z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m362 214l1 1-1-1m287 2l1 1-1-1m86 0l1 1-1-1m-61 1l1 1-1-1m-122 2l1 1-1-1m-2 1l1 1-1-1m192 0l1 1-1-1m-369 1l1 1-1-1m175 0l1 1-1-1m98 0l1 1-1-1m35 0l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m546 222l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m749 224l1 1-1-1m-139 1l1 1-1-1m78 0l1 1-1-1m-45 1l1 1-1-1m113 2l1 1-1-1m-61 1l1 1-1-1m-308 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m607 230l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m763 232l1 1-1-1m-61 1l1 1-1-1m68 3l1 1-1-1m-372 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m709 237l1 1-1-1m-308 2l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m777 240l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m716 241l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m784 244l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m723 245l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m412 246l1 1-1-1m185 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m630 248l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m791 248l1 1-1-1m-300 1l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m-70 1l1 1-1-1m68 0l1 1-1-1m109 0l1 1-1-1m204 0l1 1-1-1m-315 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m627 253l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m481 254l1 1-1-1m-2 1l1 1-1-1m326 1l1 1-1-1m-181 2l1 1-1-1m188 2l1 1-1-1m-191 3l1 1-1-1m198 1l1 1-1-1m-59 2l1 1-1-1m-142 2l1 1-1-1m208 0l1 1-1-1m-59 2l1 1-1-1m66 2l1 1-1-1m-218 1l1 1-1-1m-515 1v32h1l-1-32m481 0l1 1-1-1m193 0l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m405 275l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m840 276l1 1-1-1m-436 1l1 1-1-1m377 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m578 279l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m847 280l1 1-1-1m-59 2l1 1-1-1m-368 2l1 1-1-1m434 0l1 1-1-1m-436 1l1 1-1-1m-2 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m795 286l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m414 287l1 1-1-1m-2 1l1 1-1-1m449 0l1 1-1-1m-451 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m408 290l1 1-1-1m394 0l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m868 292l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m602 295l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m568 296l1 1-1-1m307 0l1 1-1-1m-276 4l1 1-1-1m283 0l1 1-1-1m-317 1l1 1-1-1m324 3l1 1-1-1m-293 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#d1e9b6"
+      d="m100 306v82h1v-57l-1-25z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m896 308l1 1-1-1m-303 2l1 1-1-1m246 1l1 1-1-1m-247 1l1 1-1-1m311 0l1 1-1-1m-57 3l1 1-1-1m64 1l1 1-1-1m-57 3l1 1-1-1m64 1l1 1-1-1m-57 3l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m558 327l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m867 327l1 1-1-1m-304 3l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m874 331l1 1-1-1m7 4l1 1-1-1m7 4l1 1-1-1z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m890 340v23h1l-1-23z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m581 341l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m586 344l1 1-1-1m5 3l1 1-1-1m18 11l1 1-1-1m5 3l1 1-1-1m276 2v26h1l-1-26z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m632 372l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m637 375l1 1-1-1m5 3l1 1-1-1m61 1l1 1-1-1m5 3l1 1-1-1m5 3l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m655 386l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m718 388l1 1-1-1m-58 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m890 389v25h1l-1-25z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m723 391l1 1-1-1m-58 1l1 1-1-1m63 2l1 1-1-1m5 3l1 1-1-1m5 3l1 1-1-1m-55 3l1 1-1-1m60 0l1 1-1-1m-55 3l1 1-1-1m60 0l1 1-1-1m5 3l1 1-1-1m5 3l1 1-1-1z"
+  />
+  <path
+      style="fill:#d1e9b6"
+      d="m890 414v25h1l-1-25z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m763 415l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m706 417l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m768 418l1 1-1-1m-57 2l1 1-1-1m62 1l1 1-1-1m-57 2l1 1-1-1m62 1l1 1-1-1m5 3l1 1-1-1m5 3l1 1-1-1m5 3l1 1-1-1m-59 1l1 1-1-1m64 2l1 1-1-1m-59 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m100 439v1h22l-22-1z"
+  />
+  <path
+      style="fill:#d1e9b6"
+      d="m122 439v1h34l-34-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m803 439l1 1-1-1z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m190 440v1h50c-12.89-5.41-35.95-1-50-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m808 442l1 1-1-1m5 3l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m757 448l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m818 448l1 1-1-1m-56 3l1 1-1-1m61 0l1 1-1-1m5 3l1 1-1-1m5 3l1 1-1-1m5 3l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m780 462l1 1-1-1m63 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m785 465l1 1-1-1m93 0l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m848 466l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m790 468l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m853 469l1 1-1-1m5 3l1 1-1-1z"
+  />
+  <path
+      style="fill:#d1e9b6"
+      d="m74 473v1h193l-18-1h-39-136z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m808 479l1 1-1-1m5 3l1 1-1-1m10 11l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m810 500l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m799 506l1 1-1-1z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m659 509v3l2-1v-1l-2-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m786 513l1 1-1-1z"
+  />
+  <path
+      style="fill:#d1e9b6"
+      d="m658 519v7h1l-1-7z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m775 519l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m667 523l1 1-1-1z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m658 526v4h1l-1-4z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m762 526l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m751 532l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m160 535l1 1-1-1z"
+  />
+  <path
+      style="fill:#33a101"
+      d="m4 622v1h68v107 31l0.603 13.67 15.397 11.33 40 26 156 101 46 29.81 17 9.28 26-11.83 56-26.95 133-64.05 81-39.26-26.69-51-44.89-84-16.64-31-6.99-10.18-19.79 8.04-57 27.89-116 56.5-100 48.75v-150h57l-36-21.8-76-44.78-27-15.82-13-6.11-14 6.65-32 17.86-110 61z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m156 537l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m675 538l1 1-1-1m63 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m657 540v7h1l-1-7m19 0l1 1-1-1m-529 2l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m172 542l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m177 545l1 1-1-1m550 0l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m138 547l1 1-1-1m-9 5l1 1-1-1m60 0l1 1-1-1m525 0l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m194 555l1 1-1-1m490 0l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m656 556v5h1l-1-5z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m703 558l1 1-1-1m-590 3l1 1-1-1z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m656 561v5h1l-1-5z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m206 562l1 1-1-1m5 3l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m690 565l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m104 566l1 1-1-1m-9 5l1 1-1-1m128 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#d1e9b6"
+      d="m655 574v6h1l-1-6z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m228 575l1 1-1-1m-142 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m655 580v5h1l-1-5z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m77 581l1 1-1-1m163 1l1 1-1-1m5 3l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m68 586l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m257 592l1 1-1-1m5 3l1 1-1-1m392 0v7h1l-1-7m-611 5l1 1-1-1m231 2l1 1-1-1m-240 3l1 1-1-1m245 0l1 1-1-1m-254 5l1 1-1-1z"
+  />
+  <path
+      style="fill:#d1e9b6"
+      d="m653 611v5h1l-1-5z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m291 612l1 1-1-1m-275 3l1 1-1-1m280 0l1 1-1-1z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m653 616v5h1l-1-5z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m303 619l1 1-1-1m-296 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#d1e9b6"
+      d="m3 622c3.4072 3.9 13.099 2 18 2h51v-1c-21.665 0-47.927 4.02-69-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m308 622l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m255 625v112 27l2 11c-2.83-11.9-1-25.8-1-38v-73c0-11.16 3.31-28.73-1-39z"
+  />
+  <path
+      style="fill:#d1e9b6"
+      d="m652 629v5h1l-1-5z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m547.67 632.33l0.66 0.34-0.66-0.34z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m652 634v6h1l-1-6z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m535 638l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m533 639l1 1-1-1m-2 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m555 645l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m921 646l1 1-1-1m-365 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#d1e9b6"
+      d="m651 647v5h1l-1-5z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m919 647l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m913 650l1 1-1-1m-2 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#85c73a"
+      d="m651 652v5h1l-1-5z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m494 658l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m492 659l1 1-1-1m-2 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m563 660l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m650 668v7h1l-1-7m-79 7l1 1-1-1m289 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#ffffff"
+      d="m232 829v1c30.58 17.04 59.16 40.14 88 60.02 9.49 6.55 23.59 21 35 23.06 5.7 1.04 14.06-5.37 19-7.83 15.73-7.87 31.26-16.13 47-24l123-61.5c18.95-9.47 37.43-20.6 57-28.75l-15.69-30-45.31-84-26 11.75-52 25.94-230 114.31z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m858 677l1 1-1-1m-2 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m451 679l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m854 679l1 1-1-1m-405 1l1 1-1-1m81 0l1 1-1-1m322 0l1 1-1-1m-405 1l1 1-1-1m81 0l1 1-1-1m322 0l1 1-1-1m-324 1l1 1-1-1m16 0l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m848 682l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m524 683l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m846 683l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m522 684l1 1-1-1m21 0l1 1-1-1m-23 1l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m133 0v8h1l-1-8m-135 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m578 688l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m512 689l1 1-1-1m-2 1l1 1-1-1m69 0l1 1-1-1m-71 1l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m49 0l1 1-1-1m-51 1l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m410 699l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m492 699l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m408 700l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m490 700l1 1-1-1m-84 1l1 1-1-1m82 0l1 1-1-1m-84 1l1 1-1-1m82 0l1 1-1-1m-2 1l1 1-1-1m102 0l1 1-1-1m-104 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m668 704l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m480 705l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m670 705l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m478 706l1 1-1-1m77 0l1 1-1-1m117 0l1 1-1-1m-196 1l1 1-1-1m198 0l1 1-1-1m-200 1l1 1-1-1m202 0l1 1-1-1m119 0l1 1-1-1m-323 1l1 1-1-1m321 0l1 1-1-1m-323 1l1 1-1-1m321 0l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m468 711l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m789 711l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m466 712l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m787 712l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m464 713l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m785 713l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m462 714l1 1-1-1m321 0l1 1-1-1m-323 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m561 717l1 1-1-1m33 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m367 720l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m365 721l1 1-1-1m-2 1l1 1-1-1m204 6l1 1-1-1m211 0l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m779 730l1 1-1-1m-178 1l1 1-1-1m132 6l1 1-1-1m2 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m573 739l1 1-1-1m164 0l1 1-1-1m2 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m324 741l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m741 741l1 1-1-1m-419 1l1 1-1-1m-2 1l1 1-1-1m289 3l1 1-1-1m-30 4l1 1-1-1m210 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m580 752l1 1-1-1m-297 9l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m585 761l1 1-1-1m32 0l1 1-1-1m-336 1l1 1-1-1m-2 1l1 1-1-1m307 0l1 1-1-1m-309 1l1 1-1-1m315 10l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m624 774l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m81 781l1 1-1-1m517 4l1 1-1-1m34 4l1 1-1-1m-534 3l1 1-1-1m497 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m101 794l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m593 794l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m-462 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m575 803l1 1-1-1m-2 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m640 804l1 1-1-1m-522 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m571 805l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m642 810l1 1-1-1m-507 6l1 1-1-1m484 5l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m-463 4l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m155 829l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m236 832l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m239 834l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m592 834l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m-419 2l1 1-1-1m3 2l1 1-1-1m80 3l1 1-1-1m3 2l1 1-1-1m310 2l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m-372 2l1 1-1-1m79 3l1 1-1-1m3 2l1 1-1-1m267 4l1 1-1-1m-2 1l1 1-1-1m-330 1l1 1-1-1m328 0l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m209 864l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m284 865l1 1-1-1m3 2l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m290 869l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m223 873l1 1-1-1m288 0l1 1-1-1m-2 1l1 1-1-1m-283 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m507 875l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m303 878l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m306 880l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m416 883l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m-169 1l1 1-1-1m167 0l1 1-1-1m74 0l1 1-1-1m-76 1l1 1-1-1m74 0l1 1-1-1m-76 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m480 888l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m319 889l1 1-1-1m85 0l1 1-1-1m-2 1l1 1-1-1m-80 1l1 1-1-1m78 0l1 1-1-1m-2 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m396 893l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m260 897l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m388 897l1 1-1-1m-125 2l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m457 899l1 1-1-1m-122 1l1 1-1-1m120 0l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m453 901l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m338 902l1 1-1-1m-61 6l1 1-1-1m3 2l1 1-1-1m71 1l1 1-1-1m79 1l1 1-1-1m-76 1l1 1-1-1m74 0l1 1-1-1m-131 8l1 1-1-1m106 4l1 1-1-1m-2 1l1 1-1-1m-87 6l1 1-1-1z"
+  />
+  <path
+      style="fill:#b4dc87"
+      d="m317 934l1 1-1-1z"
+  />
+  <path
+      style="fill:#a7d670"
+      d="m376 938l1 1-1-1m-2 1l1 1-1-1m-43 4l1 1-1-1m3 2l1 1-1-1m17 5l1 1-1-1m-2 1l1 1-1-1m-2 1l1 1-1-1z"
+  />
+  <metadata
+    >
+    <rdf:RDF
+      >
+      <cc:Work
+        >
+        <dc:format
+          >image/svg+xml</dc:format
+        >
+        <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        />
+        <cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        />
+        <dc:publisher
+          >
+          <cc:Agent
+              rdf:about="http://openclipart.org/"
+            >
+            <dc:title
+              >Openclipart</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:publisher
+        >
+      </cc:Work
+      >
+      <cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        >
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        />
+      </cc:License
+      >
+    </rdf:RDF
+    >
+  </metadata
+  >
+</svg
+>

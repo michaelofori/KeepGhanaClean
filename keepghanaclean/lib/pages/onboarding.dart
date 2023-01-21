@@ -46,6 +46,25 @@ class _OnboardingState extends State<Onboarding> {
       title: 'Ease',
       desc: 'Stress free platform to search for cars',
     ), 
+  //  _SliderModel(
+  //     imageAssetPath: Image.asset(
+  //       'assets/icons/on1.svg',
+  //       scale: 2,
+  //     ),
+  //      title: 'Recycle',
+  //     desc: 'Lets Save the Planet',
+  //     minTitleFontSize: 10,
+  //     descStyle: const TextStyle(
+  //       fontSize: 12,
+  //       fontWeight: FontWeight.w400,
+  //       color: Colors.black,
+  //     ),
+  //     titleStyle: const TextStyle(
+  //       fontSize: 20,
+  //       fontWeight: FontWeight.w400,
+  //       color: Colors.black,
+  //     ),
+  //   ),
      _SliderModel(
       imageAssetPath: Image.asset(
         'assets/icons/on2.svg',
