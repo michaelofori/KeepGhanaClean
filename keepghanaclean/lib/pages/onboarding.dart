@@ -43,8 +43,8 @@ class _OnboardingState extends State<Onboarding> {
       height: size.height *0.5,
       fit: BoxFit.fitHeight,
       ),
-      title: 'Ease',
-      desc: 'Stress free platform to search for cars',
+      title: 'Recycle',
+      desc: 'Lets keep Ghana clean',
     ), 
   //  _SliderModel(
   //     imageAssetPath: Image.asset(
@@ -70,8 +70,8 @@ class _OnboardingState extends State<Onboarding> {
         'assets/icons/on2.svg',
         scale: 2,
       ),
-       title: 'Recycle',
-      desc: 'Lets Save the Planet',
+       title: 'Collect waste',
+      desc: 'Help clean the environnment',
       minTitleFontSize: 10,
       descStyle: const TextStyle(
         fontSize: 12,
@@ -90,8 +90,8 @@ class _OnboardingState extends State<Onboarding> {
       height: size.height *0.5,
       fit: BoxFit.fitHeight,
       ),
-      title: 'Ease',
-      desc: 'Stress free platform to search for cars',
+      title: 'Drop Point',
+      desc: 'Locate the drop center on the map',
     ),
      _SliderModel(
       imageAssetPath: Image.asset(
