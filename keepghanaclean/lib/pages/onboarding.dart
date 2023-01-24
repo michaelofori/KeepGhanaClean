@@ -46,25 +46,6 @@ class _OnboardingState extends State<Onboarding> {
       title: 'Recycle',
       desc: 'Lets keep Ghana clean',
     ), 
-  //  _SliderModel(
-  //     imageAssetPath: Image.asset(
-  //       'assets/icons/on1.svg',
-  //       scale: 2,
-  //     ),
-  //      title: 'Recycle',
-  //     desc: 'Lets Save the Planet',
-  //     minTitleFontSize: 10,
-  //     descStyle: const TextStyle(
-  //       fontSize: 12,
-  //       fontWeight: FontWeight.w400,
-  //       color: Colors.black,
-  //     ),
-  //     titleStyle: const TextStyle(
-  //       fontSize: 20,
-  //       fontWeight: FontWeight.w400,
-  //       color: Colors.black,
-  //     ),
-  //   ),
      _SliderModel(
       imageAssetPath: Image.asset(
         'assets/icons/on2.svg',
@@ -84,22 +65,13 @@ class _OnboardingState extends State<Onboarding> {
         color: Colors.black,
       ),
     ),
-    _SliderModel(
-      imageAssetPath: SvgPicture.asset('assets/icons/on3.svg',
-      width: size.width * 0.8,
-      height: size.height *0.5,
-      fit: BoxFit.fitHeight,
-      ),
-      title: 'Drop Point',
-      desc: 'Locate the drop center on the map',
-    ),
      _SliderModel(
       imageAssetPath: Image.asset(
-        'assets/icons/on4.svg',
+        'assets/icons/center.jpg',
         scale: 2,
       ),
-       title: 'Recycle',
-      desc: 'Lets Save the Planet',
+       title: 'Drop Point',
+      desc: 'Locate the drop center on the map',
       minTitleFontSize: 10,
       descStyle: const TextStyle(
         fontSize: 12,
@@ -112,19 +84,44 @@ class _OnboardingState extends State<Onboarding> {
         color: Colors.black,
       ),
     ),
-    _SliderModel(
-      imageAssetPath: SvgPicture.asset('assets/icons/on5.svg',
-      width: size.width * 0.8,
-      height: size.height *0.5,
-      fit: BoxFit.fitHeight,
+     _SliderModel(
+      imageAssetPath: Image.asset(
+        'assets/icons/clean.jpg',
+        scale: 2,
       ),
-      title: 'Ease',
-      desc: 'Stress free platform to search for cars',
+       title: 'Sanitation',
+      desc: 'Lets help keep our streets clean!!!',
+      minTitleFontSize: 10,
+      descStyle: const TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: Colors.black,
+      ),
+      titleStyle: const TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w400,
+        color: Colors.black,
+      ),
     ),
-  
-  
-   
-   
+     _SliderModel(
+      imageAssetPath: Image.asset(
+        'assets/icons/flame.jpg',
+        scale: 2,
+      ),
+       title: 'Global Warming',
+      desc: 'Global warming is not a prediction it is happening',
+      minTitleFontSize: 10,
+      descStyle: const TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: Colors.black,
+      ),
+      titleStyle: const TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w400,
+        color: Colors.black,
+      ),
+    ), 
   ],
       controller: _controller,
       slideIndex: 0,
