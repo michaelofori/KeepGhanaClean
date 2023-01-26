@@ -55,6 +55,7 @@ dependencies:
   awesome_notifications: ^0.7.4+1
   flutter_launcher_icons: ^0.11.0
   google_fonts: ^3.0.1
+  carousel_slider: ^4.2.1
 
 flutter_app_name:
   name: "Keep Ghana Clean"
