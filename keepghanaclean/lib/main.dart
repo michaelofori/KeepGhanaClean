@@ -13,7 +13,10 @@ import 'package:keepghanaclean/model/user_model.dart';
 import 'package:keepghanaclean/pages/login_screen.dart';
 import 'pages/home.dart';
 import 'pages/settings.dart';
-
+import 'dart:async';
+import 'dart:io';
+import 'package:activity_recognition_flutter/activity_recognition_flutter.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -203,7 +206,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
             accountEmail: Text(
               user!.email!,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black54,
                 fontWeight: FontWeight.w500,
               ),

@@ -113,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
         onPressed: () {
           signIn(emailController.text, passwordController.text);
         },
-        child: Text(
+        child: const Text(
           "Login",
           textAlign: TextAlign.center,
           style: TextStyle(
@@ -175,7 +175,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     builder: (context) =>
                                         RegistrationScreen()));
                           },
-                          child: Text(
+                          child: const Text(
                             "SignUp",
                             style: TextStyle(
                                 color: Colors.redAccent,

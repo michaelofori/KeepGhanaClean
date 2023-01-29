@@ -56,6 +56,10 @@ dependencies:
   flutter_launcher_icons: ^0.11.0
   google_fonts: ^3.0.1
   carousel_slider: ^4.2.1
+  activity_recognition_flutter: ^4.2.0
+  permission_handler: ^10.2.0
+  pedometer: ^3.0.0
+  carp_mobile_sensing: ^0.40.11
 
 flutter_app_name:
   name: "Keep Ghana Clean"
