@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "648475629951",
+    "project_id": "keepghclean-10113",
+    "storage_bucket": "keepghclean-10113.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648475629951:android:6a9e2003555def3c78224a",
+        "android_client_info": {
+          "package_name": "com.example.keepghanaclean"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648475629951-q9tiaci1me5cifq7a3v3rau4ed9fs0q6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdKlKK2zsWHltj3BHoo1IEnsnzS2er41w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648475629951-q9tiaci1me5cifq7a3v3rau4ed9fs0q6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
