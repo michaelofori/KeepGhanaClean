@@ -3,6 +3,7 @@
  */
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+// ignore: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
 import 'package:keepghanaclean/pages/aboutuspage.dart';
 import 'package:keepghanaclean/pages/instructions_page.dart';
@@ -166,30 +167,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       ][currentIndex],
       drawer: _myDrawer(),
       body: pages[currentIndex],
-      // bottomNavigationBar: BottomNavigationBar(
-      //   onTap: onTap,
-      //   currentIndex: currentIndex,
-      //   type: BottomNavigationBarType.fixed,
-      //   iconSize: 30,
-      //   selectedFontSize: 0,
-      //   unselectedFontSize: 0,
-      //   elevation: 0,
-      //   showUnselectedLabels: false,
-      //   items: const <BottomNavigationBarItem>[
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home_filled),
-      //       label: 'Home',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.local_activity),
-      //       label: 'Activity',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.person_sharp),
-      //       label: 'Profile',
-      //     ),
-      //   ],
-      // ),
     );
   }
 
@@ -226,7 +203,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               );
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const MyStatefulWidget()),
+                MaterialPageRoute(
+                    builder: (context) => const MyStatefulWidget()),
               );
             },
             leading: const Icon(Icons.home),
@@ -295,7 +273,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             leading: const Icon(Icons.leaderboard_sharp),
             title: const Text("League Table"),
           ),
-           ListTile(
+          ListTile(
             selected: contactUsColor,
             onTap: () {
               setState(
@@ -315,7 +293,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             leading: const Icon(Icons.redeem_outlined),
             title: const Text("Redeem Products"),
           ),
-           ListTile(
+          ListTile(
             selected: contactUsColor,
             onTap: () {
               setState(
@@ -335,7 +313,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             leading: const Icon(Icons.support_agent_rounded),
             title: const Text("Support Center"),
           ),
-           ListTile(
+          ListTile(
             selected: contactUsColor,
             onTap: () {
               setState(
@@ -355,7 +333,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             leading: const Icon(Icons.integration_instructions_outlined),
             title: const Text("Instructions Page"),
           ),
-           ListTile(
+          ListTile(
             selected: contactUsColor,
             onTap: () {
               setState(

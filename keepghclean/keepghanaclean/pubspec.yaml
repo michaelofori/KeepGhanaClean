@@ -43,6 +43,15 @@ dependencies:
   permission_handler: ^10.2.0
   pedometer: ^3.0.0
   carp_mobile_sensing: ^0.40.12
+  carbon_icons: ^0.0.1+2
+  flutter_svg: ^2.0.0+1
+  onboarding_screen: ^0.0.3
+  cloud_firestore: ^4.3.1
+  url_launcher: ^6.1.8
+  splash_screen_view: ^2.0.1
+  font_awesome_flutter: ^10.3.0
+  flutter_facebook_auth: ^5.0.7
+  fluttertoast: ^8.1.2
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +79,7 @@ flutter:
   assets:
     - assets/login/
     - assets/logo/
+    - assets/images/
   
 
   # An image asset can refer to one or more resolution-specific "variants", see
