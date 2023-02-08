@@ -1,16 +1,18 @@
+
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:keepghanaclean/pages/aboutuspage.dart';
 import 'package:keepghanaclean/pages/home_page.dart';
 import 'package:keepghanaclean/pages/instructions_page.dart';
-import 'package:keepghanaclean/pages/login_or_register_page.dart';
 import 'package:keepghanaclean/pages/login_screen.dart';
 import 'package:keepghanaclean/pages/settings.dart';
 import 'package:keepghanaclean/pages/splash.dart';
+import 'package:keepghanaclean/pages/upload.dart';
 import 'firebase_options.dart';
+
 import 'model/user_model.dart';
-import 'pages/auth_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -71,6 +73,10 @@ List pages = [
   int currentIndex = 0;
 
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  final StorageReference storageRef = FirebaseStorage.instance.ref();
+  final userRef = Firestore.instance.collection('users');
+  final postRef = Firestore.instance.collection('post');
+  User currentUser;
 
    _signOut() async {
     await _firebaseAuth.signOut();
@@ -108,7 +114,12 @@ List pages = [
           ),
           actions: <Widget>[
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Upload(user)),
+                  );
+                },
                 icon: const Icon(
                   Icons.photo_camera_outlined,
                   color: Colors.black,
@@ -154,6 +165,7 @@ List pages = [
           UserAccountsDrawerHeader(
             decoration:
                 const BoxDecoration(color: Color.fromARGB(255, 37, 47, 138)),
+
             accountName: Text(
               user!.displayName ?? "user name",
               style: const TextStyle(color: Colors.black),
