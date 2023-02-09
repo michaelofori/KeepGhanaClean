@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
+final GoogleSignIn googleSignIn = GoogleSignIn();
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -12,6 +15,33 @@ class _HomeState extends State<Home> {
   //authentication of cpslash scren for when user is sign in or not
   //when user sign in the splash screen does not show
   bool isAuth = false;
+
+  @override
+  void initState() {
+    super.initState();
+    googleSignIn.onCurrentUserChanged.listen(
+      (account) {
+        if (account != null) {
+          print('User signed in!: $account');
+          setState(
+            () {
+              isAuth = true;
+            },
+          );
+        } else {
+          setState(
+            () {
+              isAuth = false;
+            },
+          );
+        }
+      },
+    );
+  }
+
+  login() {
+    googleSignIn.signIn();
+  }
 
   //authentication screen
   Widget buildAuthScreen() {
@@ -28,7 +58,7 @@ class _HomeState extends State<Home> {
             colors: [
               Theme.of(context).accentColor.withBlue(344),
               Theme.of(context).primaryColor.withRed(245),
-              ],
+            ],
           ),
         ),
         alignment: Alignment.center,
@@ -45,7 +75,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             GestureDetector(
-              onTap: () => print('tapped'),
+              onTap: login,
               child: Container(
                 width: 260.0,
                 height: 60.0,

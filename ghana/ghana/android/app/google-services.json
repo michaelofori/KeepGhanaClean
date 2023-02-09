@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "471275290842",
+    "project_id": "cleanghana-65958",
+    "storage_bucket": "cleanghana-65958.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:471275290842:android:b6a1ad1f2e0524999665e3",
+        "android_client_info": {
+          "package_name": "com.capstone.keepghanaclean"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "471275290842-0fh317ac4r9r6bqvm243omir412hiiro.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.capstone.keepghanaclean",
+            "certificate_hash": "f689d045bfe6875349d8dd681a7a5c3a0aea7da6"
+          }
+        },
+        {
+          "client_id": "471275290842-3eab7tivm4d28t76619b8nlmm9q2s76s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP3fgmEhbQLRPl8cSefJ_86jVEaoJGAMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "471275290842-3eab7tivm4d28t76619b8nlmm9q2s76s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "471275290842-kmbhtaapec7l6sluc628nb2l5smu9tnv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.capstone.keepghanaclean"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
