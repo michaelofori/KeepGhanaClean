@@ -16,9 +16,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        accentColor: Colors.teal,
+        colorScheme: ColorScheme.fromSwatch()
+            .copyWith(secondary: Colors.teal),
       ),
-      home: Home(),
+      home:  Home(),
     );
   }
 }
