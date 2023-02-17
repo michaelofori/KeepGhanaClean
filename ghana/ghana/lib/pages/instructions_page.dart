@@ -48,7 +48,7 @@ class InstructionPage extends StatelessWidget {
                 'Tap on the arrow button on the right corner to view the specifications of the car.',
                 style: bodyText1,
               ),
-               const Divider(height: 16),
+              const Divider(height: 16),
               Text(
                 'How to edit',
                 style: headline6,
@@ -67,7 +67,7 @@ class InstructionPage extends StatelessWidget {
                 style: bodyText1,
               ),
               const Divider(height: 16),
-               const Divider(height: 16),
+              const Divider(height: 16),
               Text(
                 'How buy a car',
                 style: headline6,

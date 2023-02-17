@@ -5,7 +5,6 @@ import 'instructions_page.dart';
 import 'aboutuspage.dart';
 import 'home.dart';
 
-
 final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
 _signOut() async {

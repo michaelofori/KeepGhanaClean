@@ -1,7 +1,5 @@
-
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:keepghanaclean/pages/aboutuspage.dart';
 import 'package:keepghanaclean/pages/home_page.dart';
@@ -34,16 +32,6 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Roboto',
         ),
       );
-
-  // This widget is the root of your application.
-  // @override
-  // Widget build(BuildContext context) {
-  //   return const MaterialApp(
-  //     debugShowCheckedModeBanner: false,
-  //     home: AuthPage(),
-
-  //   );
-  // }
 }
 
 class MyStatefulWidget extends StatefulWidget {
@@ -58,8 +46,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
 List pages = [
     HomePage(),
-    //const Messages(),
-    // const Profile(),
   ];
 
   User? user = FirebaseAuth.instance.currentUser;
@@ -73,10 +59,7 @@ List pages = [
   int currentIndex = 0;
 
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  final StorageReference storageRef = FirebaseStorage.instance.ref();
-  final userRef = Firestore.instance.collection('users');
-  final postRef = Firestore.instance.collection('post');
-  User currentUser;
+
 
    _signOut() async {
     await _firebaseAuth.signOut();
@@ -117,7 +100,7 @@ List pages = [
                 onPressed: () {
                   Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Upload(user)),
+                  MaterialPageRoute(builder: (context) => Upload()),
                   );
                 },
                 icon: const Icon(

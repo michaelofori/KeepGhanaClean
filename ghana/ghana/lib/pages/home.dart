@@ -1,3 +1,4 @@
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:ghana/pages/settings.dart';
 import 'package:ghana/pages/upload.dart';
@@ -55,9 +56,7 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
-    pageController = PageController(
-
-    );
+    pageController = PageController();
     //detects when the user is sign in
     googleSignIn.onCurrentUserChanged.listen((account) {
       handleSignIn(account!);
@@ -106,15 +105,14 @@ class _HomeState extends State<Home> {
   Scaffold buildAuthScreen() {
     return Scaffold(
       body: PageView(
-        children: <Widget>[
-          Space()      
-        ],
+        children: <Widget>[Space()],
         controller: pageController,
-        onPageChanged:
-         onPageChanged,
+        onPageChanged: onPageChanged,
         physics: const NeverScrollableScrollPhysics(),
       ),
     );
+
+
     // return Scaffold(
     //   key: _key,
     //   appBar: [

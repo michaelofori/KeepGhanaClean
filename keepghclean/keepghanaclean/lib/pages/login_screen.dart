@@ -1,14 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:keepghanaclean/components/google_sign_in.dart';
-import 'package:provider/provider.dart';
 import '../Components/google_sign_in_button.dart';
-import '../components/square_tile.dart';
 import '../main.dart';
-import '../services/auth_services.dart';
 import 'registration_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -41,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
       Future(() {
         Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => MyStatefulWidget()));
+            MaterialPageRoute(builder: (context) => const MyStatefulWidget()));
       });
     }
   }
@@ -69,8 +63,8 @@ class _LoginScreenState extends State<LoginScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.mail),
-        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        prefixIcon: const Icon(Icons.mail),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "Email",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
@@ -98,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
       },
       textInputAction: TextInputAction.done,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.vpn_key),
+        prefixIcon: const Icon(Icons.vpn_key),
         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "Password",
         border: OutlineInputBorder(

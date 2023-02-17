@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:keepghanaclean/pages/login_or_register_page.dart';
-import 'package:keepghanaclean/pages/login_page.dart';
 import 'package:keepghanaclean/pages/login_screen.dart';
 import 'package:onboarding_screen/onboarding_screen.dart';
 
@@ -135,7 +133,7 @@ class _OnboardingState extends State<Onboarding> {
       ),
       skipStyle: TextStyle(color: Colors.white),
 
-      pageIndicatorColorList: [
+      pageIndicatorColorList: const [
         Colors.yellow,
         Colors.green,
         Colors.red,

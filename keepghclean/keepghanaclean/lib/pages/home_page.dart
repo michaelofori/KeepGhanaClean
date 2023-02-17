@@ -1,15 +1,9 @@
-import 'dart:async';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:keepghanaclean/main.dart';
-import 'package:keepghanaclean/pages/login_or_register_page.dart';
 import '../activity/activivty.dart';
 import '../activity/timer.dart';
 import '../model/user_model.dart';
 import '../widgets/activity_card.dart';
-import 'aboutuspage.dart';
-import 'instructions_page.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});

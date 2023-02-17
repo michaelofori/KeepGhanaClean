@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:keepghanaclean/pages/register_page.dart';
-
 import 'login_page.dart';
 
 

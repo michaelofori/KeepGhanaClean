@@ -1,8 +1,5 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
-
 import 'onboarding.dart';
 
 class Splash extends StatelessWidget {
@@ -17,11 +14,11 @@ class Splash extends StatelessWidget {
       imageSrc: 'assets/images/1024.png',
       text: "Keep Ghana Clean",
       textType: TextType.NormalText,
-      textStyle: TextStyle(
+      textStyle: const TextStyle(
         color: Color.fromARGB(255, 42, 23, 207),
         fontSize: 30.0,
       ),
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
     );
 
     return MaterialApp(
