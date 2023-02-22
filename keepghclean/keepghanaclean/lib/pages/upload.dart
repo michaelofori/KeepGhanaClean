@@ -1,10 +1,14 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:keepghanaclean/components/my_button.dart';
 import 'package:keepghanaclean/components/my_textfield.dart';
 
 
 class Upload extends StatefulWidget {
-  const Upload({super.key});
+  final XFile image;
+  const Upload({required this.image,super.key});
 
 
   @override
@@ -12,6 +16,12 @@ class Upload extends StatefulWidget {
 }
 
 class _UploadState extends State<Upload> {
+
+  @override
+  void initState() {
+      widget.image;
+    super.initState();
+  }
 
  
  
@@ -32,7 +42,8 @@ class _UploadState extends State<Upload> {
           height: size.height,
           child: Column(
             children: [
-              Image.asset("assets/images/run.gif", height: size.height *0.4, width: size.width * 0.9,),
+              Image.file(File(widget.image.path), height: size.height *0.4, width: size.width * 0.9,),
+              // Image.asset("assets/images/run.gif", height: size.height *0.4, width: size.width * 0.9,),
               const Spacer(flex: 1,),
               MyTextField(controller: comment, hintText: "Type some comment",),
               const Spacer(flex: 1,),

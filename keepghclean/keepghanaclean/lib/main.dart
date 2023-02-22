@@ -1,9 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:keepghanaclean/pages/aboutuspage.dart';
 import 'package:keepghanaclean/pages/home_page.dart';
 import 'package:keepghanaclean/pages/instructions_page.dart';
+import 'package:keepghanaclean/pages/league_table.dart';
 import 'package:keepghanaclean/pages/location_sites.dart';
 import 'package:keepghanaclean/pages/login_screen.dart';
 import 'package:keepghanaclean/pages/settings.dart';
@@ -51,30 +54,44 @@ List pages = [
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
 
-  bool homeColor = true;
-  bool cartColor = false;
-  bool aboutColor = false;
-  bool contactUsColor = false;
-  bool logOut = false;
+  List<bool> _pageColors = List.generate(8,(index)=> index==0);
+
+  // bool homeColor = true;
+  // bool cartColor = false;
+  // bool aboutColor = false;
+  // bool contactUsColor = false;
+  // bool logOut = false;
   int currentIndex = 0;
 
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
+
+  void _setPage(BuildContext context,int pageNumber){
+
+    setState(() {
+       _pageColors = List.generate(_pageColors.length,(index)=> false);
+    _pageColors[pageNumber] = true;
+    });
+    Navigator.pop(context);
+
+  }
 
 
    _signOut() async {
     await _firebaseAuth.signOut();
   }
 
-   void onTap(int index) {
-    setState(
-      () {
-        currentIndex = index;
-      },
-    );
-  }
+  //  void onTap(int index) {
+  //   setState(
+  //     () {
+  //       currentIndex = index;
+  //     },
+  //   );
+  // }
 
     @override
   Widget build(BuildContext context) {
+    // FirebaseFirestore.instance.collection().where().orderBy()
     return Scaffold(
       key: _key,
       appBar: [
@@ -97,11 +114,38 @@ List pages = [
           ),
           actions: <Widget>[
             IconButton(
-                onPressed: () {
+                onPressed: () async {
+                  showDialog(context: context, builder: (context)=> AlertDialog(
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ListTile(title: Text("Camera"),
+                         onTap: ()async{
+                          ImagePicker().pickImage(source: ImageSource.camera).then((image){
+                            Navigator.pop(context,image);
+                          });
+                        }),
+                        ListTile(title: Text("Gallery"),
+                         onTap: ()async{
+                          ImagePicker().pickImage(source: ImageSource.gallery).then((image){
+                            Navigator.pop(context,image);
+                          });
+                          }),
+                        
+                      ]
+                    )
+                  )).then((result){
+                    if(result != null){
                   Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Upload()),
+                  MaterialPageRoute(builder: (context) => Upload(image: result)),
                   );
+                  }
+
+                  });
+
+                  // print("image selectyed from $result");
+                  
                 },
                 icon: const Icon(
                   Icons.photo_camera_outlined,
@@ -136,7 +180,7 @@ List pages = [
         ),
       ][currentIndex],
       drawer: _myDrawer(),
-       body: pages[currentIndex],
+       body: HomePage(),
       
     );
   }
@@ -162,17 +206,19 @@ List pages = [
             ),
           ),
           ListTile(
-            selected: homeColor,
+            selected:  _pageColors[0],
             onTap: () {
-              setState(
-                () {
-                  homeColor = true;
-                  cartColor = false;
-                  aboutColor = false;
-                  contactUsColor = false;
-                  logOut = false;
-                },
-              );
+              // setState(
+              //   () {
+              //     homeColor = true;
+              //     cartColor = false;
+              //     aboutColor = false;
+              //     contactUsColor = false;
+              //     logOut = false;
+              //   },
+              // );
+              
+              _setPage(context, 0);
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -183,19 +229,20 @@ List pages = [
             title: const Text("Home"),
           ),
           ListTile(
-            selected: cartColor,
+            selected:  _pageColors[1],
             onTap: () {
-              Navigator.pop(context);
-              setState(
-                () {
-                  currentIndex = 1;
-                  cartColor = true;
-                  homeColor = false;
-                  aboutColor = false;
-                  contactUsColor = false;
-                  logOut = false;
-                },
-              );
+              _setPage(context,1);
+              // Navigator.pop(context);
+              // setState(
+              //   () {
+              //     currentIndex = 1;
+              //     cartColor = true;
+              //     homeColor = false;
+              //     aboutColor = false;
+              //     contactUsColor = false;
+              //     logOut = false;
+                // },
+              // );
               // Navigator.push(
               //   context,
               //   MaterialPageRoute(builder: (context) => const MyStatefulWidget()),
@@ -205,18 +252,19 @@ List pages = [
             title: const Text("My Coupons"),
           ),
           ListTile(
-            selected: aboutColor,
+            selected:  _pageColors[2],
             onTap: () {
-              Navigator.pop(context);
-              setState(
-                () {
-                  aboutColor = true;
-                  homeColor = false;
-                  cartColor = false;
-                  contactUsColor = false;
-                  logOut = false;
-                },
-              );
+              _setPage(context, 2);
+              // Navigator.pop(context);
+              // setState(
+              //   () {
+              //     aboutColor = true;
+              //     homeColor = false;
+              //     cartColor = false;
+              //     contactUsColor = false;
+              //     logOut = false;
+              //   },
+              // );
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const locationSites()),
@@ -226,37 +274,32 @@ List pages = [
             title: const Text("Recycle Sites"),
           ),
           ListTile(
-            selected: contactUsColor,
+            selected:  _pageColors[3],
             onTap: () {
-              setState(
-                () {
-                  contactUsColor = true;
-                  homeColor = false;
-                  cartColor = false;
-                  aboutColor = false;
-                  logOut = false;
-                },
+              _setPage(context, 3);
+              
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LeagueTable()),
               );
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => Profile()),
-              // );
             },
             leading: const Icon(Icons.leaderboard_sharp),
             title: const Text("League Table"),
           ),
           ListTile(
-            selected: contactUsColor,
+            selected:  _pageColors[4],
             onTap: () {
-              setState(
-                () {
-                  contactUsColor = true;
-                  homeColor = false;
-                  cartColor = false;
-                  aboutColor = false;
-                  logOut = false;
-                },
-              );
+              
+              _setPage(context, 4);
+              // setState(
+              //   () {
+              //     contactUsColor = true;
+              //     homeColor = false;
+              //     cartColor = false;
+              //     aboutColor = false;
+              //     logOut = false;
+              //   },
+              // );
               // Navigator.push(
               //   context,
               //   MaterialPageRoute(builder: (context) => Profile()),
@@ -266,17 +309,19 @@ List pages = [
             title: const Text("Redeem Products"),
           ),
           ListTile(
-            selected: contactUsColor,
+            selected:  _pageColors[5],
             onTap: () {
-              setState(
-                () {
-                  contactUsColor = true;
-                  homeColor = false;
-                  cartColor = false;
-                  aboutColor = false;
-                  logOut = false;
-                },
-              );
+              
+              _setPage(context, 5);
+              // setState(
+              //   () {
+              //     contactUsColor = true;
+              //     homeColor = false;
+              //     cartColor = false;
+              //     aboutColor = false;
+              //     logOut = false;
+              //   },
+              // );
               // Navigator.push(
               //   context,
               //   MaterialPageRoute(builder: (context) => Profile()),
@@ -286,17 +331,19 @@ List pages = [
             title: const Text("Support Center"),
           ),
           ListTile(
-            selected: contactUsColor,
+            selected:  _pageColors[6],
             onTap: () {
-              setState(
-                () {
-                  contactUsColor = true;
-                  homeColor = false;
-                  cartColor = false;
-                  aboutColor = false;
-                  logOut = false;
-                },
-              );
+              // setState(
+              //   () {
+              //     contactUsColor = true;
+              //     homeColor = false;
+              //     cartColor = false;
+              //     aboutColor = false;
+              //     logOut = false;
+              //   },
+              // );
+              
+              _setPage(context, 6);
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const InstructionPage()),
@@ -306,17 +353,18 @@ List pages = [
             title: const Text("Instructions Page"),
           ),
           ListTile(
-            selected: contactUsColor,
+            selected: _pageColors[7],
             onTap: () {
-              setState(
-                () {
-                  contactUsColor = true;
-                  homeColor = false;
-                  cartColor = false;
-                  aboutColor = false;
-                  logOut = false;
-                },
-              );
+              _setPage(context, 7);
+              // setState(
+              //   () {
+              //     contactUsColor = true;
+              //     homeColor = false;
+              //     cartColor = false;
+              //     aboutColor = false;
+              //     logOut = false;
+              //   },
+              // );
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const AboutUsPage()),
@@ -329,6 +377,7 @@ List pages = [
             leading: const Icon(Icons.logout),
             title: const Text("Log out"),
             onTap: () async {
+              _setPage(context, 8);
               await _signOut();
               if (_firebaseAuth.currentUser == null) {
                 Navigator.push(

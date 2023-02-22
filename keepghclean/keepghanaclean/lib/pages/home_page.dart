@@ -58,9 +58,21 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(
-      child: Container(
+      child: SizedBox(
         height: size.height ,
-        child: Column(
+        child: FutureBuilder<List<Map>>(
+          initialData: const [
+            {
+              "distance" : 0,
+              "time" : 0,
+            },
+            {}
+          ],
+          future: Future.wait([
+            Future.delayed(Duration(seconds: 3), ()=> {'distance' : 400, 'time':12}),
+            Future.delayed(Duration(seconds: 6), ()=> {}),
+          ]),
+          builder: ((context, snapshot) => Column(
           
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           
@@ -71,7 +83,7 @@ class HomePage extends StatelessWidget {
             ActivityCard(
               image: "assets/images/run.gif",
               bottomValue: 20,
-              topValue: 100,
+              topValue: snapshot.data!.first["distance"],
               type: GoalType.distance,
               onTopTap: () {
                  Navigator.push(
@@ -83,7 +95,7 @@ class HomePage extends StatelessWidget {
             ActivityCard(
               image: "assets/images/c2.gif",
               bottomValue: 50,
-              topValue: 20,
+              topValue: snapshot.data!.first["time"],
               color: const Color.fromARGB(255, 26, 90, 185),
               type: GoalType.time,
                onTopTap: () {
@@ -109,16 +121,16 @@ class HomePage extends StatelessWidget {
             ),
             
             Expanded(
-              child: 
-            ListView.builder( //TODO fix height issue (card)
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context,index) => PostTile(),
-            ),
+              child: ListView.builder( //TODO fix height issue (card)
+                scrollDirection: Axis.horizontal,
+               itemBuilder: (context,index) => PostTile(),
+              ),
             ),
         
              SizedBox(height: size.height * 0.05)
         
           ],
+        ))
         ),
       ),
     );
