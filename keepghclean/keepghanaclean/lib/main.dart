@@ -9,7 +9,6 @@ import 'package:keepghanaclean/pages/settings.dart';
 import 'package:keepghanaclean/pages/splash.dart';
 import 'package:keepghanaclean/pages/upload.dart';
 import 'firebase_options.dart';
-
 import 'model/user_model.dart';
 
 Future<void> main() async {

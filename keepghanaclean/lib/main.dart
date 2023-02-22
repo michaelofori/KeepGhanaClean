@@ -1,23 +1,14 @@
-/**
- * @author Michael Ofori
- */
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-// ignore: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
 import 'package:keepghanaclean/pages/aboutuspage.dart';
+import 'package:keepghanaclean/pages/home.dart';
 import 'package:keepghanaclean/pages/instructions_page.dart';
-import 'package:keepghanaclean/pages/onboarding.dart';
-import 'package:keepghanaclean/pages/profile.dart';
-import 'package:splash_screen_view/SplashScreenView.dart';
-import 'package:keepghanaclean/model/user_model.dart';
 import 'package:keepghanaclean/pages/login_screen.dart';
-import 'pages/home.dart';
-import 'pages/settings.dart';
-import 'dart:async';
-import 'dart:io';
-import 'package:activity_recognition_flutter/activity_recognition_flutter.dart';
-import 'package:permission_handler/permission_handler.dart';
+import 'package:keepghanaclean/pages/onboarding.dart';
+import 'package:keepghanaclean/pages/settings.dart';
+import 'package:splash_screen_view/SplashScreenView.dart';
+import 'model/user_model.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -80,8 +71,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
   List pages = [
     const HomeScreen(),
-    //const Messages(),
-    const Profile(),
   ];
 
   User? user = FirebaseAuth.instance.currentUser;

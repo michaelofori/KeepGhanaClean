@@ -59,6 +59,7 @@ dependencies:
   uuid: ^3.0.7
   firebase_storage: ^11.0.10
   geolocator: ^9.0.2
+  numberpicker: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -87,6 +88,7 @@ flutter:
     - assets/login/
     - assets/logo/
     - assets/images/
+    - assets/icons/
   
 
   # An image asset can refer to one or more resolution-specific "variants", see
