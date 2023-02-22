@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:keepghanaclean/pages/aboutuspage.dart';
 import 'package:keepghanaclean/pages/home_page.dart';
 import 'package:keepghanaclean/pages/instructions_page.dart';
+import 'package:keepghanaclean/pages/location_sites.dart';
 import 'package:keepghanaclean/pages/login_screen.dart';
 import 'package:keepghanaclean/pages/settings.dart';
 import 'package:keepghanaclean/pages/splash.dart';
@@ -216,10 +217,10 @@ List pages = [
                   logOut = false;
                 },
               );
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => uploadCars()),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const locationSites()),
+              );
             },
             leading: const Icon(Icons.location_city_sharp),
             title: const Text("Recycle Sites"),

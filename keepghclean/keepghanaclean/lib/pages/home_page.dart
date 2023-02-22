@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:keepghanaclean/components/post_tile.dart';
 import '../activity/activivty.dart';
 import '../activity/timer.dart';
 import '../model/user_model.dart';
@@ -55,54 +56,71 @@ class HomePage extends StatelessWidget {
   //   );
   // }
   Widget build(BuildContext context) {
-    return Column(
-      
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      
-      children: <Widget>[
-        // const SizedBox(
-        //   height: 10,
-        // ),
-        ActivityCard(
-          image: "assets/images/run.gif",
-          bottomValue: 20,
-          topValue: 100,
-          type: GoalType.distance,
-          onTopTap: () {
-             Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const activityWalk()),
-              );
-          },
-        ),
-        ActivityCard(
-          image: "assets/images/c2.gif",
-          bottomValue: 50,
-          topValue: 20,
-          color: const Color.fromARGB(255, 26, 90, 185),
-          type: GoalType.time,
-           onTopTap: () {
-             Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const timer()),
-              );
-          },
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                "TRENDS FOR YOU",
-                style: TextStyle(
-                  color: Colors.black,
-                ),
+    Size size = MediaQuery.of(context).size;
+    return SingleChildScrollView(
+      child: Container(
+        height: size.height ,
+        child: Column(
+          
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          
+          children: <Widget>[
+            // const SizedBox(
+            //   height: 10,
+            // ),
+            ActivityCard(
+              image: "assets/images/run.gif",
+              bottomValue: 20,
+              topValue: 100,
+              type: GoalType.distance,
+              onTopTap: () {
+                 Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const activityWalk()),
+                  );
+              },
+            ),
+            ActivityCard(
+              image: "assets/images/c2.gif",
+              bottomValue: 50,
+              topValue: 20,
+              color: const Color.fromARGB(255, 26, 90, 185),
+              type: GoalType.time,
+               onTopTap: () {
+                 Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const timer()),
+                  );
+              },
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    "TRENDS FOR YOU",
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+            
+            Expanded(
+              child: 
+            ListView.builder( //TODO fix height issue (card)
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context,index) => PostTile(),
+            ),
+            ),
+        
+             SizedBox(height: size.height * 0.05)
+        
+          ],
         ),
-      ],
+      ),
     );
   }
 
