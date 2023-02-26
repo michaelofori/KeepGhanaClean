@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -32,7 +31,11 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: _title,
         theme: ThemeData(
-          fontFamily: 'Roboto',
+          // fontFamily: 'Roboto',
+          fontFamily: "Signatra",
+          primarySwatch: Colors.blue,
+          colorScheme:
+              ColorScheme.fromSwatch().copyWith(secondary: Colors.teal),
         ),
       );
 }
@@ -47,49 +50,32 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
 
-List pages = [
+  List pages = [
     HomePage(),
   ];
 
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
 
-  List<bool> _pageColors = List.generate(8,(index)=> index==0);
+  List<bool> _pageColors = List.generate(8, (index) => index == 0);
 
-  // bool homeColor = true;
-  // bool cartColor = false;
-  // bool aboutColor = false;
-  // bool contactUsColor = false;
-  // bool logOut = false;
   int currentIndex = 0;
 
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
-
-  void _setPage(BuildContext context,int pageNumber){
-
+  void _setPage(BuildContext context, int pageNumber) {
     setState(() {
-       _pageColors = List.generate(_pageColors.length,(index)=> false);
-    _pageColors[pageNumber] = true;
+      _pageColors = List.generate(_pageColors.length, (index) => false);
+      _pageColors[pageNumber] = true;
     });
     Navigator.pop(context);
-
   }
 
-
-   _signOut() async {
+  Future<void> _signOut() async {
     await _firebaseAuth.signOut();
   }
 
-  //  void onTap(int index) {
-  //   setState(
-  //     () {
-  //       currentIndex = index;
-  //     },
-  //   );
-  // }
-
-    @override
+  @override
   Widget build(BuildContext context) {
     // FirebaseFirestore.instance.collection().where().orderBy()
     return Scaffold(
@@ -98,11 +84,16 @@ List pages = [
         AppBar(
           title: const Text(
             "Keep Ghana Clean",
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(
+              color: Colors.black,
+              fontFamily: "Signatra",
+              fontSize: 30.0,
+            ),
           ),
           centerTitle: true,
           elevation: 0.1,
-          backgroundColor: Color.fromARGB(255, 46, 90, 184),
+          backgroundColor: Theme.of(context).accentColor,
+          // backgroundColor: Color.fromARGB(255, 46, 90, 184),
           leading: IconButton(
             icon: const Icon(
               Icons.menu,
@@ -115,37 +106,42 @@ List pages = [
           actions: <Widget>[
             IconButton(
                 onPressed: () async {
-                  showDialog(context: context, builder: (context)=> AlertDialog(
-                    content: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        ListTile(title: Text("Camera"),
-                         onTap: ()async{
-                          ImagePicker().pickImage(source: ImageSource.camera).then((image){
-                            Navigator.pop(context,image);
-                          });
-                        }),
-                        ListTile(title: Text("Gallery"),
-                         onTap: ()async{
-                          ImagePicker().pickImage(source: ImageSource.gallery).then((image){
-                            Navigator.pop(context,image);
-                          });
-                          }),
-                        
-                      ]
-                    )
-                  )).then((result){
-                    if(result != null){
-                  Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Upload(image: result)),
-                  );
-                  }
-
+                  showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                              content: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                ListTile(
+                                    title: Text("Camera"),
+                                    onTap: () async {
+                                      ImagePicker()
+                                          .pickImage(source: ImageSource.camera)
+                                          .then((image) {
+                                        Navigator.pop(context, image);
+                                      });
+                                    }),
+                                ListTile(
+                                    title: Text("Gallery"),
+                                    onTap: () async {
+                                      ImagePicker()
+                                          .pickImage(
+                                              source: ImageSource.gallery)
+                                          .then((image) {
+                                        Navigator.pop(context, image);
+                                      });
+                                    }),
+                              ]))).then((result) {
+                    if (result != null) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Upload(image: result)),
+                      );
+                    }
                   });
 
                   // print("image selectyed from $result");
-                  
                 },
                 icon: const Icon(
                   Icons.photo_camera_outlined,
@@ -180,19 +176,17 @@ List pages = [
         ),
       ][currentIndex],
       drawer: _myDrawer(),
-       body: HomePage(),
-      
+      body: HomePage(),
     );
   }
 
-   Widget _myDrawer() {
+  Widget _myDrawer() {
     return Drawer(
       child: ListView(
         children: <Widget>[
           UserAccountsDrawerHeader(
             decoration:
                 const BoxDecoration(color: Color.fromARGB(255, 37, 47, 138)),
-
             accountName: Text(
               user!.displayName ?? "user name",
               style: const TextStyle(color: Colors.black),
@@ -206,7 +200,7 @@ List pages = [
             ),
           ),
           ListTile(
-            selected:  _pageColors[0],
+            selected: _pageColors[0],
             onTap: () {
               // setState(
               //   () {
@@ -217,7 +211,7 @@ List pages = [
               //     logOut = false;
               //   },
               // );
-              
+
               _setPage(context, 0);
               Navigator.push(
                 context,
@@ -229,9 +223,9 @@ List pages = [
             title: const Text("Home"),
           ),
           ListTile(
-            selected:  _pageColors[1],
+            selected: _pageColors[1],
             onTap: () {
-              _setPage(context,1);
+              _setPage(context, 1);
               // Navigator.pop(context);
               // setState(
               //   () {
@@ -241,7 +235,7 @@ List pages = [
               //     aboutColor = false;
               //     contactUsColor = false;
               //     logOut = false;
-                // },
+              // },
               // );
               // Navigator.push(
               //   context,
@@ -252,7 +246,7 @@ List pages = [
             title: const Text("My Coupons"),
           ),
           ListTile(
-            selected:  _pageColors[2],
+            selected: _pageColors[2],
             onTap: () {
               _setPage(context, 2);
               // Navigator.pop(context);
@@ -274,10 +268,10 @@ List pages = [
             title: const Text("Recycle Sites"),
           ),
           ListTile(
-            selected:  _pageColors[3],
+            selected: _pageColors[3],
             onTap: () {
               _setPage(context, 3);
-              
+
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => LeagueTable()),
@@ -287,9 +281,8 @@ List pages = [
             title: const Text("League Table"),
           ),
           ListTile(
-            selected:  _pageColors[4],
+            selected: _pageColors[4],
             onTap: () {
-              
               _setPage(context, 4);
               // setState(
               //   () {
@@ -309,9 +302,8 @@ List pages = [
             title: const Text("Redeem Products"),
           ),
           ListTile(
-            selected:  _pageColors[5],
+            selected: _pageColors[5],
             onTap: () {
-              
               _setPage(context, 5);
               // setState(
               //   () {
@@ -331,7 +323,7 @@ List pages = [
             title: const Text("Support Center"),
           ),
           ListTile(
-            selected:  _pageColors[6],
+            selected: _pageColors[6],
             onTap: () {
               // setState(
               //   () {
@@ -342,11 +334,12 @@ List pages = [
               //     logOut = false;
               //   },
               // );
-              
+
               _setPage(context, 6);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const InstructionPage()),
+                MaterialPageRoute(
+                    builder: (context) => const InstructionPage()),
               );
             },
             leading: const Icon(Icons.integration_instructions_outlined),
@@ -377,7 +370,6 @@ List pages = [
             leading: const Icon(Icons.logout),
             title: const Text("Log out"),
             onTap: () async {
-              _setPage(context, 8);
               await _signOut();
               if (_firebaseAuth.currentUser == null) {
                 Navigator.push(
@@ -391,6 +383,4 @@ List pages = [
       ),
     );
   }
-
-
 }

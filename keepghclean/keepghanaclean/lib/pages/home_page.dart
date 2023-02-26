@@ -1,6 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:keepghanaclean/components/post_tile.dart';
+import 'package:keepghanaclean/model/post_comment_model.dart';
+import 'package:keepghanaclean/model/post_model.dart';
+import 'package:keepghanaclean/services/database_services.dart';
 import '../activity/activivty.dart';
 import '../activity/timer.dart';
 import '../model/user_model.dart';
@@ -119,13 +122,23 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            
-            Expanded(
+
+            FutureBuilder<List<PostModel>>(
+              future: DatabaseService.getPosts(),
+              builder: (context,snapshot){
+                if (snapshot.connectionState == ConnectionState.done){
+                  return Expanded(
               child: ListView.builder( //TODO fix height issue (card)
                 scrollDirection: Axis.horizontal,
-               itemBuilder: (context,index) => PostTile(),
+                itemCount: snapshot.data?.length,
+               itemBuilder: (context,index) => PostTile(post: snapshot.data!.elementAt(index)),
               ),
-            ),
+            );
+                }else {
+                  return const CircularProgressIndicator();
+                }
+              },
+              ),
         
              SizedBox(height: size.height * 0.05)
         

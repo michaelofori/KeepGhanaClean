@@ -1,20 +1,29 @@
 {
   "project_info": {
     "project_number": "648475629951",
+    "firebase_url": "https://keepghclean-10113-default-rtdb.firebaseio.com",
     "project_id": "keepghclean-10113",
     "storage_bucket": "keepghclean-10113.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:648475629951:android:6a9e2003555def3c78224a",
+        "mobilesdk_app_id": "1:648475629951:android:8cb22ed3ee4ccee078224a",
         "android_client_info": {
           "package_name": "com.example.keepghanaclean"
         }
       },
       "oauth_client": [
         {
-          "client_id": "648475629951-q9tiaci1me5cifq7a3v3rau4ed9fs0q6.apps.googleusercontent.com",
+          "client_id": "648475629951-7cfk3qrvq5fnmdd7a4d00bo9otc28f52.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.keepghanaclean",
+            "certificate_hash": "f689d045bfe6875349d8dd681a7a5c3a0aea7da6"
+          }
+        },
+        {
+          "client_id": "648475629951-p3jk9cfkur6kll7legkl3miu1fr8rurg.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,8 +36,15 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "648475629951-q9tiaci1me5cifq7a3v3rau4ed9fs0q6.apps.googleusercontent.com",
+              "client_id": "648475629951-96rathjv6kk2aui4uu41q5dveotumq3t.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "648475629951-r4ldd7og6dtaom40ot1sqkf459svc9ut.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.keepghanaclean"
+              }
             }
           ]
         }

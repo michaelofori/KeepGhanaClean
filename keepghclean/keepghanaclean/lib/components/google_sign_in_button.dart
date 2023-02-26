@@ -1,10 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:keepghanaclean/Components/google_sign_in.dart';
-import 'package:keepghanaclean/pages/home_page.dart';
-import 'package:provider/provider.dart';
 import '../main.dart';
 
 class GoogleSignIn extends StatefulWidget {
@@ -20,22 +16,21 @@ class _GoogleSignInState extends State<GoogleSignIn> {
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
       style: ElevatedButton.styleFrom(
-        primary: Color.fromARGB(
+        foregroundColor: const Color.fromARGB(
+            255, 238, 232, 232), primary: const Color.fromARGB(
             255, 193, 204, 214),
-        onPrimary: Color.fromARGB(
-            255, 238, 232, 232),
         maximumSize:
-            Size(double.infinity, 50),
+            const Size(double.infinity, 50),
       ),
-      icon: FaIcon(FontAwesomeIcons.google,
+      icon: const FaIcon(FontAwesomeIcons.google,
           color: Colors.red),
-      label: Text('Sign Up with Google'),
+      label: const Text('Sign Up with Google'),
       onPressed: () async {
         googleLogin().then((value){
           if (value) {// if the sign in was successful
           Navigator.pushReplacement( context, MaterialPageRoute(builder: (context)=> const MyStatefulWidget()));
           } else {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("We couldn't sign you in")));
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("We couldn't sign you in")));
           }
         });
       },

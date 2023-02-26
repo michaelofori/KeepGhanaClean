@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:keepghanaclean/pages/home_page.dart';
 import 'package:numberpicker/numberpicker.dart';
 import 'dart:async';
-
 import '../main.dart';
 
 class timer extends StatefulWidget {
@@ -416,7 +414,7 @@ class _activityWalkState extends State<timer> with TickerProviderStateMixin{
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          'Time Project',
+          'Timer',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 30.0,

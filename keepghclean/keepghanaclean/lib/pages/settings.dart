@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carbon_icons/carbon_icons.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:keepghanaclean/pages/instructions_page.dart';
-import 'package:keepghanaclean/pages/login_or_register_page.dart';
+import 'package:keepghanaclean/pages/login_screen.dart';
 import 'aboutuspage.dart';
 
 
@@ -62,7 +62,7 @@ class SettingsPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const LoginOrRegisterPage()),
+                      builder: (context) => const LoginScreen()),
                 );
               }
             },

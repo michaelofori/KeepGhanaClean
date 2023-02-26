@@ -1,9 +1,12 @@
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:keepghanaclean/components/my_button.dart';
 import 'package:keepghanaclean/components/my_textfield.dart';
+import 'package:keepghanaclean/model/post_model.dart';
+import 'package:keepghanaclean/services/database_services.dart';
 
 class Upload extends StatefulWidget {
   final XFile image;
@@ -14,6 +17,7 @@ class Upload extends StatefulWidget {
 }
 
 class _UploadState extends State<Upload> {
+    TextEditingController comment = TextEditingController();
   @override
   void initState() {
     widget.image;
@@ -23,7 +27,6 @@ class _UploadState extends State<Upload> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    TextEditingController comment = TextEditingController();
 
     return Scaffold(
         appBar: AppBar(
@@ -52,7 +55,22 @@ class _UploadState extends State<Upload> {
                   flex: 1,
                 ),
 
-                MyButton(text: "Create Post", onTap: () {}),
+                MyButton(text: "Create Post", onTap: () async{
+                    DatabaseService.uploadImage(File(widget.image.path))
+                    .then((imageUrl) async {
+                      
+                  PostModel post = PostModel(
+                    userId: FirebaseAuth.instance.currentUser!.uid, 
+                    username: FirebaseAuth.instance.currentUser!.displayName ?? "no name", 
+                    comment: comment.text, 
+                    imageUrl: imageUrl, 
+                    createdAt: DateTime.now()
+                    );
+                      await DatabaseService.createPost(post);
+                      print("done");
+                    },);
+                  
+                }),
                 const Spacer(
                   flex: 4,
                 ),

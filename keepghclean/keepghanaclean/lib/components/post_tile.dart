@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:keepghanaclean/model/post_model.dart';
 import 'package:keepghanaclean/pages/post_details.dart';
 
 class PostTile extends StatelessWidget {
-  const PostTile({super.key});
+  final PostModel post;
+  const PostTile({required this.post,super.key});
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return  InkWell(
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=> PostDetails()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=> PostDetails(post: post)));
       },
       child: SizedBox(
           width: size.width * 0.6,
@@ -43,7 +45,7 @@ class PostTile extends StatelessWidget {
                   ),
                 ),
               ),
-              Image.asset("assets/images/run.gif", height: 70, width: 150),
+              Image.network(post.imageUrl, height: 70, width: 150, fit: BoxFit.fill,),
               Row(
                 children: [
                   IconButton(
@@ -57,11 +59,11 @@ class PostTile extends StatelessWidget {
               ),
               RichText(
                 text: TextSpan(
-                  text: "Username ",
+                  text: "${post.username}  ",
                   style: Theme.of(context).textTheme.bodyLarge,
                   children: [
                     TextSpan(
-                      text: "Some comment about how fun the post"*2,//TODO get max count
+                      text: post.comment,//TODO get max count
                   style: Theme.of(context).textTheme.bodyMedium,
                     )
                   ]

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:keepghanaclean/pages/login_or_register_page.dart';
+import 'package:keepghanaclean/pages/login_screen.dart';
 import '../model/user_model.dart';
 
 class Profile extends StatefulWidget {
@@ -79,6 +79,6 @@ class _ProfileState extends State<Profile> {
   Future<void> logout(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
     Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const LoginOrRegisterPage()));
+        MaterialPageRoute(builder: (context) => const LoginScreen()));
   }
 }

@@ -66,6 +66,26 @@ flutter {
     source '../..'
 }
 
+// plugins {
+//   id 'com.android.application'
+
+//   // Add the Google services Gradle plugin
+//   id 'com.google.gms.google-services'
+
+// }
+
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //  implementation platform('com.google.firebase:firebase-bom:31.2.0')
+
+    implementation platform('com.google.firebase:firebase-bom:31.2.2')
+
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 }
+
+  // Add the Google services Gradle plugin
+apply plugin: 'com.google.gms.google-services'

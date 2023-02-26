@@ -26,25 +26,25 @@ class LoginController with ChangeNotifier {
   }
 
   //function for facebook login
-  facebooklogin() async {
-    var result = await FacebookAuth.i.login(
-      permissions: ["public_profile", "email"],
-    );
+  // facebooklogin() async {
+  //   var result = await FacebookAuth.i.login(
+  //     permissions: ["public_profile", "email"],
+  //   );
 
-    // check the status of our login
-    if (result.status == LoginStatus.success) {
-      final requestData = await FacebookAuth.i.getUserData(
-        fields: "email, name, picture",
-      );
+  //   // check the status of our login
+  //   if (result.status == LoginStatus.success) {
+  //     final requestData = await FacebookAuth.i.getUserData(
+  //       fields: "email, name, picture",
+  //     );
 
-      this.userDetails = new UserDetails(
-        displayName: requestData["name"],
-        email: requestData["email"],
-        photoURL: requestData["picture"]["data"]["url"] ?? " ",
-      );
-      notifyListeners();
-    }
-  }
+  //     this.userDetails = new UserDetails(
+  //       displayName: requestData["name"],
+  //       email: requestData["email"],
+  //       photoURL: requestData["picture"]["data"]["url"] ?? " ",
+  //     );
+  //     notifyListeners();
+  //   }
+  // }
 
   //logout
 

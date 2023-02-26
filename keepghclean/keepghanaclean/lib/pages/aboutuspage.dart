@@ -51,7 +51,7 @@ class AboutUsPage extends StatelessWidget {
               height: 8,
             ),
             const AppBarTitle(
-              trailingTitle: 'Middlemen Garage',
+              trailingTitle: 'Keep Ghana Clean',
               fontSize: 36,
             ),
             const AppBarTitle(
@@ -59,8 +59,8 @@ class AboutUsPage extends StatelessWidget {
               fontSize: 16,
             ),
             const AppBarTitle(
-              leadingTitle: 'Michael ',
-              trailingTitle: 'Ofori',
+              leadingTitle: 'Michael Ofori ',
+              trailingTitle: '\nPrince Sefa',
               fontSize: 20,
             ),
             const SizedBox(
