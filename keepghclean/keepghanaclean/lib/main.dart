@@ -187,10 +187,20 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           UserAccountsDrawerHeader(
             decoration:
                 const BoxDecoration(color: Color.fromARGB(255, 37, 47, 138)),
+           currentAccountPicture:  CircleAvatar(
+                radius: 50.0,
+               // primarySwatch: Colors.blue,
+                backgroundColor: Colors.blue,
+               backgroundImage: NetworkImage(user!.photoURL!),
+                // backgroundImage:
+                
+                    // NetworkImage("http://tineye.com/images/widgets/mona.jpg"),
+              ),
             accountName: Text(
               user!.displayName ?? "user name",
               style: const TextStyle(color: Colors.black),
             ),
+            
             accountEmail: Text(
               user!.email!,
               style: const TextStyle(

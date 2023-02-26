@@ -56,7 +56,7 @@ class _activityWalkState extends State<activityWalk> {
     });
   }
 
-  void initPlatformState() {
+  void initPlatformState() async{
     _pedestrianStatusStream = Pedometer.pedestrianStatusStream;
     _pedestrianStatusStream
         .listen(onPedestrianStatusChanged)

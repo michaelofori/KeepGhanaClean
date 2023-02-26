@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:numberpicker/numberpicker.dart';
 import 'dart:async';
 import '../main.dart';
@@ -41,6 +42,8 @@ class _activityWalkState extends State<timer> with TickerProviderStateMixin{
           t.cancel();
           // if we want to reset the (time selector) timer
           // then write the following line of code
+          
+      Fluttertoast.showToast(msg: "timer end"!);
           Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => MyStatefulWidget()));
         } else if (timefortimer < 60) {
@@ -65,7 +68,9 @@ class _activityWalkState extends State<timer> with TickerProviderStateMixin{
   }
 
   //TODO Stop Function for timer() Buttons
-  void stop() {
+  void stop()async {
+    print("end");
+     await Fluttertoast.showToast(msg: "timer end");
     setState(() {
       started = true;
       stopped = true;
@@ -83,6 +88,7 @@ class _activityWalkState extends State<timer> with TickerProviderStateMixin{
   void initState() {
     tb = TabController(length: 2, vsync: this);
     super.initState();
+    
   }
 
   

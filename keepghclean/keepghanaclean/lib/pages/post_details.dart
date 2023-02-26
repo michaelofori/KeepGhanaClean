@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:keepghanaclean/components/app_title.dart';
+import 'package:keepghanaclean/components/post_tile.dart';
 import 'package:keepghanaclean/model/post_comment_model.dart';
 import 'package:keepghanaclean/model/post_model.dart';
 import 'package:keepghanaclean/pages/settings.dart';
@@ -32,18 +33,7 @@ class _PostDetailsState extends State<PostDetails> {
             const SizedBox(height: 80),
             Image.network(widget.post.imageUrl,
                 height: size.height * 0.3, width: double.maxFinite),
-            Row(
-              children: [
-                IconButton(
-                  icon: const Icon(
-                    Icons.heart_broken,
-                    color: Colors.pink,
-                  ),
-                  onPressed: () {},
-                ),
-                Text("3")
-              ],
-            ),
+            LikeCount(widget.post.postId!),
             RichText(
               text: TextSpan(
                   text: "${widget.post.username} ",

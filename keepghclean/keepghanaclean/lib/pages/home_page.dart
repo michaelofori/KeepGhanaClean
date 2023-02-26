@@ -28,8 +28,6 @@ class HomePage extends StatelessWidget {
     await _firebaseAuth.signOut();
   }
 
- 
-
   //final user = FirebaseAuth.instance.currentUser!;
 
   // sign user out method
@@ -62,7 +60,7 @@ class HomePage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(
       child: SizedBox(
-        height: size.height ,
+        height: size.height * 0.85,
         child: FutureBuilder<List<Map>>(
           initialData: const [
             {

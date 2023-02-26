@@ -71,6 +71,7 @@ flutter {
 
 //   // Add the Google services Gradle plugin
 //   id 'com.google.gms.google-services'
+//   id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin' version '2.0.1' apply false
 
 // }
 

@@ -1,7 +1,9 @@
 import 'dart:io';
 
+import 'package:carp_mobile_sensing/carp_mobile_sensing.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:keepghanaclean/components/my_button.dart';
 import 'package:keepghanaclean/components/my_textfield.dart';
@@ -66,9 +68,13 @@ class _UploadState extends State<Upload> {
                     imageUrl: imageUrl, 
                     createdAt: DateTime.now()
                     );
-                      await DatabaseService.createPost(post);
-                      print("done");
-                    },);
+                      DatabaseService.createPost(post).then((value){
+                        Fluttertoast.showToast(msg: "Post has been  uploaded");
+                      });
+                      
+                        Navigator.pop(context);
+                    },
+                    );
                   
                 }),
                 const Spacer(
