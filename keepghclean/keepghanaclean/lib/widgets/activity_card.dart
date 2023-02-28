@@ -31,7 +31,7 @@ class ActivityCard extends StatelessWidget {
 
   final Map<String, String> label_unit = {
     "time spent": "min",
-    "distance walked": "km"
+    "distance walked": "steps"
   };
 
   @override

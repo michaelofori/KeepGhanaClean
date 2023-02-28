@@ -47,11 +47,11 @@ class _OnboardingState extends State<Onboarding> {
         ),
         _SliderModel(
           imageAssetPath: Image.asset(
-            'assets/icons/on2.svg',
+            'assets/images/clean.jpg',
             scale: 2,
           ),
           title: 'Collect waste',
-          desc: 'Help clean the environnment',
+          desc: 'Help clean to keep Ghana Clean today',
           minTitleFontSize: 10,
           descStyle: const TextStyle(
             fontSize: 12,
@@ -69,8 +69,8 @@ class _OnboardingState extends State<Onboarding> {
             'assets/icons/center.jpg',
             scale: 2,
           ),
-          title: 'Drop Point',
-          desc: 'Locate the drop center on the map',
+          title: 'Recycle center',
+          desc: 'Locate the recycle center on the map',
           minTitleFontSize: 10,
           descStyle: const TextStyle(
             fontSize: 12,

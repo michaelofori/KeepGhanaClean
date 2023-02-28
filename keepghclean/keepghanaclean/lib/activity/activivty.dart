@@ -73,31 +73,31 @@ class _activityWalkState extends State<activityWalk> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: Text("Activity"),
+        title: const Text("Step tracker"),
         centerTitle: true,
       ),
      body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
+              const Text(
                 'Steps taken:',
                 style: TextStyle(fontSize: 30),
               ),
               Text(
                 _steps,
-                style: TextStyle(fontSize: 60),
+                style: const TextStyle(fontSize: 60),
               ),
-              Divider(
+              const Divider(
                 height: 100,
                 thickness: 0,
                 color: Colors.white,
               ),
-              Text(
-                'Pedestrian status:',
+              const Text(
+                'Status:',
                 style: TextStyle(fontSize: 30),
               ),
               Icon(
@@ -112,8 +112,8 @@ class _activityWalkState extends State<activityWalk> {
                 child: Text(
                   _status,
                   style: _status == 'walking' || _status == 'stopped'
-                      ? TextStyle(fontSize: 30)
-                      : TextStyle(fontSize: 20, color: Colors.red),
+                      ? const TextStyle(fontSize: 30)
+                      : const TextStyle(fontSize: 20, color: Colors.red),
                 ),
               )
             ],

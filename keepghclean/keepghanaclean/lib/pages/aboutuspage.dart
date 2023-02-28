@@ -34,8 +34,11 @@ class AboutUsPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: Padding(
+        
         padding: const EdgeInsets.all(16),
+        
         child: Column(
+          
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

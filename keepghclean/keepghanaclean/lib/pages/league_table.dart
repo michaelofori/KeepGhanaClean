@@ -13,6 +13,7 @@ class _LeagueTableState extends State<LeagueTable> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue.shade500,
       appBar: AppBar(
         title: const Text(
           "League Table",

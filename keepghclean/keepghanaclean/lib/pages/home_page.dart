@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
             {}
           ],
           future: Future.wait([
-            Future.delayed(Duration(seconds: 3), ()=> {'distance' : 400, 'time':12}),
+            Future.delayed(Duration(seconds: 3), ()=> {'distance' : 26233, 'time':12}),
             Future.delayed(Duration(seconds: 6), ()=> {}),
           ]),
           builder: ((context, snapshot) => Column(
