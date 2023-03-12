@@ -8,6 +8,7 @@ import 'package:keepghanaclean/pages/instructions_page.dart';
 import 'package:keepghanaclean/pages/league_table.dart';
 import 'package:keepghanaclean/pages/location_sites.dart';
 import 'package:keepghanaclean/pages/login_screen.dart';
+import 'package:keepghanaclean/pages/redeemproducts.dart';
 import 'package:keepghanaclean/pages/settings.dart';
 import 'package:keepghanaclean/pages/splash.dart';
 import 'package:keepghanaclean/pages/upload.dart';
@@ -303,9 +304,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               //     logOut = false;
               //   },
               // );
-              // Navigator.push(
+              //    Navigator.push(
               //   context,
-              //   MaterialPageRoute(builder: (context) => Profile()),
+              //   MaterialPageRoute(builder: (context) =>  RedeemProduct()),
               // );
             },
             leading: const Icon(Icons.redeem_outlined),
@@ -315,18 +316,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             selected: _pageColors[5],
             onTap: () {
               _setPage(context, 5);
-              // setState(
-              //   () {
-              //     contactUsColor = true;
-              //     homeColor = false;
-              //     cartColor = false;
-              //     aboutColor = false;
-              //     logOut = false;
-              //   },
-              // );
+           
               // Navigator.push(
               //   context,
-              //   MaterialPageRoute(builder: (context) => Profile()),
+              //   MaterialPageRoute(builder: (context) => const RedeemProduct()),
               // );
             },
             leading: const Icon(Icons.support_agent_rounded),

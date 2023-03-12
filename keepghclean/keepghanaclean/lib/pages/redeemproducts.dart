@@ -1,192 +1,400 @@
-// import 'package:flutter/cupertino.dart';
-// import 'dart:async';
-// import 'package:flutter/material.dart';
-// import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'dart:async';
+import 'dart:convert';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:http/http.dart' as http;
+import 'package:latlong2/latlong.dart';
+import 'package:open_street_map_search_and_pick/widgets/wide_button.dart';
 
-// class RedeemProduct extends StatefulWidget {
-//   const RedeemProduct({super.key});
+
+class RedeemProduct extends StatefulWidget {
+
+   final LatLong center;
+  final void Function(PickedData pickedData) onPicked;
+  final Future<LatLng> Function() onGetCurrentLocationPressed;
+  final Color buttonColor;
+  final Color buttonTextColor;
+  final Color locationPinIconColor;
+  final String buttonText;
+  final String hintText;
+
+  static Future<LatLng> nopFunction() {
+    throw Exception("");
+  }
+
+  const RedeemProduct({
+  Key? key,
+    required this.center,
+    required this.onPicked,
+    this.onGetCurrentLocationPressed = nopFunction,
+    this.buttonColor = Colors.blue,
+    this.locationPinIconColor = Colors.blue,
+    this.buttonTextColor = Colors.white,
+    this.buttonText = 'Set Current Location',
+    this.hintText = 'Search Location',
+  }) : super(key: key);
+    
+  @override
+  State<RedeemProduct> createState() => _RedeemProductState();
+
+}
+
+class _RedeemProductState extends State<RedeemProduct> {
+  
+  MapController _mapController = MapController();
+  final TextEditingController _searchController = TextEditingController();
+  final FocusNode _focusNode = FocusNode();
+  List<OSMdata> _options = <OSMdata>[];
+  Timer? _debounce;
+  var client = http.Client();
+
+  void setNameCurrentPos() async {
+    double latitude = _mapController.center.latitude;
+    double longitude = _mapController.center.longitude;
+    if (kDebugMode) {
+      print(latitude);
+    }
+    if (kDebugMode) {
+      print(longitude);
+    }
+    String url =
+        'https://nominatim.openstreetmap.org/reverse?format=json&lat=$latitude&lon=$longitude&zoom=18&addressdetails=1';
+
+    var response = await client.post(Uri.parse(url));
+    var decodedResponse =
+        jsonDecode(utf8.decode(response.bodyBytes)) as Map<dynamic, dynamic>;
+
+    _searchController.text =
+        decodedResponse['display_name'] ?? "MOVE TO CURRENT POSITION";
+    setState(() {});
+  }
+
+  void setNameCurrentPosAtInit() async {
+    double latitude = widget.center.latitude;
+    double longitude = widget.center.longitude;
+    if (kDebugMode) {
+      print(latitude);
+    }
+    if (kDebugMode) {
+      print(longitude);
+    }
+    String url =
+        'https://nominatim.openstreetmap.org/reverse?format=json&lat=$latitude&lon=$longitude&zoom=18&addressdetails=1';
+
+    var response = await client.post(Uri.parse(url));
+    var decodedResponse =
+        jsonDecode(utf8.decode(response.bodyBytes)) as Map<dynamic, dynamic>;
+
+    _searchController.text =
+        decodedResponse['display_name'] ?? "MOVE TO CURRENT POSITION";
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    _mapController = MapController();
+
+    setNameCurrentPosAtInit();
+
+    _mapController.mapEventStream.listen((event) async {
+      if (event is MapEventMoveEnd) {
+        var client = http.Client();
+        String url =
+            'https://nominatim.openstreetmap.org/reverse?format=json&lat=${event.center.latitude}&lon=${event.center.longitude}&zoom=18&addressdetails=1';
+
+        var response = await client.post(Uri.parse(url));
+        var decodedResponse = jsonDecode(utf8.decode(response.bodyBytes))
+            as Map<dynamic, dynamic>;
+
+        _searchController.text = decodedResponse['display_name'];
+        setState(() {});
+      }
+    });
+
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _mapController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // String? _autocompleteSelection;
+    OutlineInputBorder inputBorder = OutlineInputBorder(
+      borderSide: BorderSide(color: widget.buttonColor),
+    );
+    OutlineInputBorder inputFocusBorder = OutlineInputBorder(
+      borderSide: BorderSide(color: widget.buttonColor, width: 3.0),
+    );
+    return SafeArea(
+      child: Stack(
+        children: [
+          Positioned.fill(
+              child: FlutterMap(
+            options: MapOptions(
+                center: LatLng(widget.center.latitude, widget.center.longitude),
+                zoom: 15.0,
+                maxZoom: 18,
+                minZoom: 6),
+            mapController: _mapController,
+            children: [
+              TileLayer(
+                urlTemplate:
+                    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                subdomains: const ['a', 'b', 'c'],
+                // attributionBuilder: (_) {
+                //   return Text("© OpenStreetMap contributors");
+                // },
+              ),
+            ],
+          )),
+          Positioned(
+              top: MediaQuery.of(context).size.height * 0.5,
+              left: 0,
+              right: 0,
+              child: IgnorePointer(
+                child: Center(
+                  child: StatefulBuilder(builder: (context, setState) {
+                    return Text(
+                      _searchController.text,
+                      textAlign: TextAlign.center,
+                    );
+                  }),
+                ),
+              )),
+          Positioned.fill(
+              child: IgnorePointer(
+            child: Center(
+              child: Icon(
+                Icons.location_pin,
+                size: 50,
+                color: widget.locationPinIconColor,
+              ),
+            ),
+          )),
+          Positioned(
+              bottom: 180,
+              right: 5,
+              child: FloatingActionButton(
+                heroTag: 'btn1',
+                backgroundColor: widget.buttonColor,
+                onPressed: () {
+                  _mapController.move(
+                      _mapController.center, _mapController.zoom + 1);
+                },
+                child: Icon(
+                  Icons.zoom_in_map,
+                  color: widget.buttonTextColor,
+                ),
+              )),
+          Positioned(
+              bottom: 120,
+              right: 5,
+              child: FloatingActionButton(
+                heroTag: 'btn2',
+                backgroundColor: widget.buttonColor,
+                onPressed: () {
+                  _mapController.move(
+                      _mapController.center, _mapController.zoom - 1);
+                },
+                child: Icon(
+                  Icons.zoom_out_map,
+                  color: widget.buttonTextColor,
+                ),
+              )),
+          Positioned(
+              bottom: 60,
+              right: 5,
+              child: FloatingActionButton(
+                heroTag: 'btn3',
+                backgroundColor: widget.buttonColor,
+                onPressed: () async {
+                  try {
+                    LatLng position =
+                        await widget.onGetCurrentLocationPressed.call();
+                    _mapController.move(
+                        LatLng(position.latitude, position.longitude),
+                        _mapController.zoom);
+                  } catch (e) {
+                    _mapController.move(
+                        LatLng(widget.center.latitude, widget.center.longitude),
+                        _mapController.zoom);
+                  } finally {
+                    setNameCurrentPos();
+                  }
+                },
+                child: Icon(
+                  Icons.my_location,
+                  color: widget.buttonTextColor,
+                ),
+              )),
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              margin: const EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Column(
+                children: [
+                  TextFormField(
+                      controller: _searchController,
+                      focusNode: _focusNode,
+                      decoration: InputDecoration(
+                        hintText: widget.hintText,
+                        border: inputBorder,
+                        focusedBorder: inputFocusBorder,
+                      ),
+                      onChanged: (String value) {
+                        if (_debounce?.isActive ?? false) _debounce?.cancel();
+
+                        _debounce =
+                            Timer(const Duration(milliseconds: 2000), () async {
+                          if (kDebugMode) {
+                            print(value);
+                          }
+                          var client = http.Client();
+                          try {
+                            String url =
+                                'https://nominatim.openstreetmap.org/search?q=$value&format=json&polygon_geojson=1&addressdetails=1';
+                            if (kDebugMode) {
+                              print(url);
+                            }
+                            var response = await client.post(Uri.parse(url));
+                            var decodedResponse =
+                                jsonDecode(utf8.decode(response.bodyBytes))
+                                    as List<dynamic>;
+                            if (kDebugMode) {
+                              print(decodedResponse);
+                            }
+                            _options = decodedResponse
+                                .map((e) => OSMdata(
+                                    displayname: e['display_name'],
+                                    lat: double.parse(e['lat']),
+                                    lon: double.parse(e['lon'])))
+                                .toList();
+                            setState(() {});
+                          } finally {
+                            client.close();
+                          }
+
+                          setState(() {});
+                        });
+                      }),
+                  StatefulBuilder(builder: ((context, setState) {
+                    return ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: _options.length > 5 ? 5 : _options.length,
+                        itemBuilder: (context, index) {
+                          return ListTile(
+                            title: Text(_options[index].displayname),
+                            subtitle: Text(
+                                '${_options[index].lat},${_options[index].lon}'),
+                            onTap: () {
+                              _mapController.move(
+                                  LatLng(
+                                      _options[index].lat, _options[index].lon),
+                                  15.0);
+
+                              _focusNode.unfocus();
+                              _options.clear();
+                              setState(() {});
+                            },
+                          );
+                        });
+                  })),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: WideButton(
+                  widget.buttonText,
+                  onPressed: () async {
+                    pickData().then((value) {
+                      widget.onPicked(value);
+                    });
+                  },
+                  backgroundColor: widget.buttonColor,
+                  foregroundColor: widget.buttonTextColor,
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Future<PickedData> pickData() async {
+    LatLong center = LatLong(
+        _mapController.center.latitude, _mapController.center.longitude);
+    var client = http.Client();
+    String url =
+        'https://nominatim.openstreetmap.org/reverse?format=json&lat=${_mapController.center.latitude}&lon=${_mapController.center.longitude}&zoom=18&addressdetails=1';
+
+    var response = await client.post(Uri.parse(url));
+    var decodedResponse =
+        jsonDecode(utf8.decode(response.bodyBytes)) as Map<dynamic, dynamic>;
+    String displayName = decodedResponse['display_name'];
+    return PickedData(center, displayName);
+  }
+}
+
+class OSMdata {
+  final String displayname;
+  final double lat;
+  final double lon;
+  OSMdata({required this.displayname, required this.lat, required this.lon});
+  @override
+  String toString() {
+    return '$displayname, $lat, $lon';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (other.runtimeType != runtimeType) {
+      return false;
+    }
+    return other is OSMdata && other.displayname == displayname;
+  }
+
+  @override
+  int get hashCode => Object.hash(displayname, lat, lon);
+}
+
+class LatLong {
+  final double latitude;
+  final double longitude;
+  LatLong(this.latitude, this.longitude);
+}
+
+class PickedData {
+  final LatLong latLong;
+  final String address;
+
+  PickedData(this.latLong, this.address);
+}
+
+
 
 //   @override
-//   State<RedeemProduct> createState() => _RedeemProductState();
-// }
-
-// class _RedeemProductState extends State<RedeemProduct> {
-//   Completer<GoogleMapController> _controller = Completer();
-
-//   // Googleplex
-//   static LatLng _googleHQ = LatLng(37.4219999, -122.0862462);
-//   static final CameraPosition _camGHq = CameraPosition(
-//     target: _googleHQ,
-//     zoom: 11,);
-
-//   // Mumbai-Home
-//   static LatLng _mumbai = LatLng(19.0760,72.8777);
-//   static final CameraPosition _camMum = CameraPosition(
-//     target: _mumbai,
-//     zoom: 11,);
-
-
-//     static const LatLng _center = const LatLng(19.0760, 72.8777);
-//   // Code added
-//   // Adding mapType
-//   MapType _currentMapType = MapType.normal;
-//   // Marker
-//   final Set<Marker> _markers = {};
-
-//   // Tracking current location
-//   LatLng _lastMapPosition = _center;
-
-//   void _onMapCreated(GoogleMapController controller) {
-//     _controller.complete(controller);
-//   }
-
-//  @override
 //   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       home: Scaffold(
-//         appBar: AppBar(
-//           title: Text('Google Maps with Flutter'),
-//           backgroundColor: Colors.cyan,
-//         ),
-//         body: Stack(
-//           children: <Widget>[
-//             GoogleMap(
-//               onMapCreated: _onMapCreated,
-//               mapType: _currentMapType, // Map type
-//               markers: _markers, // markers
-//               onCameraMove: _onCameraMove, // Moves camera
-//               myLocationEnabled: true, // shows user location
-//               rotateGesturesEnabled: true,
-//               scrollGesturesEnabled: true,
-//               tiltGesturesEnabled: true,
-//               initialCameraPosition: CameraPosition(
-//                 target: _center,
-//                 zoom: 11.0,
-//               ),
-//             ),
-// 		    Padding(
-// 		      padding: const EdgeInsets.all(10.0),
-// 		      child: Align(
-// 		        alignment: Alignment.topRight,
-// 		        child: Column(
-// 		          children: <Widget>[
-// 		            SizedBox(
-// 		              width:48,
-// 		              height:48,
-// 		              child: FloatingActionButton(
-// 		                onPressed: _onMapTypeButtonPressed,
-// 		                materialTapTargetSize: MaterialTapTargetSize.padded,
-// 		                backgroundColor: Colors.cyan,
-// 		                child: const Icon(Icons.map, size: 24.0),
-// 		              ),
-// 		            ),
-// 		            SizedBox(height: 5.0),
-//                     SizedBox(
-//                       width:48,
-//                       height:48,
-//                       child: FloatingActionButton(
-//                         onPressed: _onAddMarkerButtonPressed,
-//                         materialTapTargetSize: MaterialTapTargetSize.padded,
-//                         backgroundColor: Colors.cyan,
-//                         child: const Icon(Icons.add_location, size: 24.0),
-//                       ),
-//                     ),
-//                     SizedBox(height: 5.0),
-//                     SizedBox(
-//                       width:48,
-//                       height:48,
-//                       child: FloatingActionButton(
-//                         onPressed: _gotoGoogleHQ,
-//                         materialTapTargetSize: MaterialTapTargetSize.padded,
-//                         backgroundColor: Colors.cyan,
-//                         child: const Icon(Icons.loyalty, size: 24.0),
-//                       ),
-//                     ),
-//                     SizedBox(height: 5.0),
-//                     SizedBox(
-//                       width:48,
-//                       height:48,
-//                       child: FloatingActionButton(
-//                         onPressed: _gotoPlace,
-//                         materialTapTargetSize: MaterialTapTargetSize.padded,
-//                         backgroundColor: Colors.cyan,
-//                         child: const Icon(Icons.home, size: 24.0),
-//                       ),
-//                     ),
-// 		          ], 
-// 		         ),
-// 		       ),
-// 		    ),
-// 		  ],
-// 		),
-//       ),
-//     );
+//     return Container();
 //   }
-
-// 	void _onCameraMove(CameraPosition position) {
-// 	  _lastMapPosition = position.target;
-// 	}
-
-// 	Future <void> _gotoGoogleHQ() async{
-	  
-
-// 	  //Fly camera there
-// 	  final GoogleMapController controller = await _controller.future;
-// 	  controller.animateCamera(CameraUpdate.newCameraPosition(_camGHq));
-	  
-// 	  // Mark it
-// 	  setState(() async {
-// 	    _markers.add(Marker(
-// 	      // This marker id can be anything that uniquely identifies each marker.
-// 	      markerId: MarkerId(_lastMapPosition.toString()),
-// 	      position: _googleHQ,
-// 	      infoWindow: const InfoWindow(
-// 	        title: 'Googleplex',
-// 	        snippet: 'Google HQ',
-// 	      ),
-// 	      icon: await BitmapDescriptor.fromAssetImage('assets/images/gholder.png' as ImageConfiguration),
-// 	    ));
-// 	  });
-// 	}
-
-// 	Future <void> _gotoPlace() async{
-
-// 	final GoogleMapController controller = await _controller.future;
-// 	controller.animateCamera(CameraUpdate.newCameraPosition(_camMum));
-
-// 	}
-
-
-// 	void _onMapTypeButtonPressed() {
-// 	  setState(() {
-// 	    _currentMapType = _currentMapType == MapType.normal
-// 	        ? MapType.satellite
-// 	        : MapType.normal;
-// 	    print(_currentMapType);
-// 	  });
-// 	}
-// 	void _onAddMarkerButtonPressed() {
-// 	  setState(() {
-// 	    _markers.add(Marker(
-// 	      // This marker id can be anything that uniquely identifies each marker.
-// 	      markerId: MarkerId(_lastMapPosition.toString()),
-// 	      position: _lastMapPosition,
-// 	      infoWindow: InfoWindow(
-// 	        title: 'Really cool place',
-// 	        snippet: '5 Star Rating',
-// 	      ),
-// 	      icon: BitmapDescriptor.defaultMarker,
-// 	    ));
-// 	  });
-// 	}
-
-
-
-
-//   // @override
-//   // Widget build(BuildContext context) {
-//   //   return Container();
-//   // }
 
 // }

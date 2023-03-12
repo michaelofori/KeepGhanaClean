@@ -1,4 +1,3 @@
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import '../widgets/progress.dart';
 
@@ -26,7 +25,7 @@ class _LeagueTableState extends State<LeagueTable> {
         centerTitle: true,
         elevation: 0.1,
         backgroundColor: Theme.of(context).accentColor,
-        actions: <Widget>[
+        actions: const <Widget>[
           // IconButton(
           //   icon: const Icon(
           //     Icons.settings,

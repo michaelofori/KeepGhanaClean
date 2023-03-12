@@ -13,6 +13,8 @@ class Onboarding extends StatefulWidget {
 class _OnboardingState extends State<Onboarding> {
   final PageController _controller = PageController();
 
+  
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -33,23 +35,31 @@ class _OnboardingState extends State<Onboarding> {
         );
       },
 
+      
+
       /// This [mySlides] must not be more than 5.
       mySlides: [
         _SliderModel(
+          
           imageAssetPath: SvgPicture.asset(
             'assets/icons/on1.svg',
+            
             width: size.width * 0.8,
             height: size.height * 0.5,
             fit: BoxFit.fitHeight,
           ),
           title: 'Recycle',
           desc: 'Lets keep Ghana clean',
+          
         ),
         _SliderModel(
+                    
           imageAssetPath: Image.asset(
             'assets/images/clean.jpg',
             scale: 2,
+            
           ),
+         
           title: 'Collect waste',
           desc: 'Help clean to keep Ghana Clean today',
           minTitleFontSize: 10,
