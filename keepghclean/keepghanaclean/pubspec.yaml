@@ -66,6 +66,9 @@ dependencies:
   open_street_map_search_and_pick: ^0.0.16
   flutter_map: ^3.1.0
   latlong2: ^0.8.1
+  location: ^4.4.0
+  test: ^1.22.0
+  fl_chart: ^0.61.0
 
 dev_dependencies:
   flutter_test:

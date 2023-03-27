@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const activityWalk()),
+                              builder: (context) =>  activityWalk()),
                         );
                       },
                     ),
