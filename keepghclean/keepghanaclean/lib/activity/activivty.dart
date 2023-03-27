@@ -33,6 +33,7 @@ class _activityWalkState extends State<activityWalk> {
   late Stream<StepCount> _stepCountStream;
   late Stream<PedestrianStatus> _pedestrianStatusStream;
   String _status = '?', _steps = '?';
+  
 
   @override
   void initState() {
