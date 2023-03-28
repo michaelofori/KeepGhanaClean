@@ -8,17 +8,17 @@ import 'package:fl_chart/fl_chart.dart';
 import '../constants/colors_pallete.dart';
 part 'activity_recognition_domain.dart';
 
-
 String formatDate(DateTime d) {
   return d.toString().substring(0, 19);
 }
 
 class activityWalk extends StatefulWidget {
-   activityWalk({super.key});
- List<Color> get availableColors => const <Color>[
+  activityWalk({super.key});
+  
+  List<Color> get availableColors => const <Color>[
         ColorPallete.fontsColor,
       ];
-    final Color barBackgroundColor = ColorPallete.primaryColor.withOpacity(0.3);
+  final Color barBackgroundColor = ColorPallete.primaryColor.withOpacity(0.3);
   final Color barColor = ColorPallete.chartsColor;
   final Color touchedBarColor = ColorPallete.chartsColor;
 
@@ -28,12 +28,11 @@ class activityWalk extends StatefulWidget {
 
 class _activityWalkState extends State<activityWalk> {
   final Duration animDuration = const Duration(milliseconds: 250);
-   int touchedIndex = -1;
-   bool isPlaying = false;
+  int touchedIndex = -1;
+  bool isPlaying = false;
   late Stream<StepCount> _stepCountStream;
   late Stream<PedestrianStatus> _pedestrianStatusStream;
-  String _status = '?', _steps = '?';
-  
+  String _status = 'Inactive', _steps = 'Inactive';
 
   @override
   void initState() {
@@ -90,47 +89,65 @@ class _activityWalkState extends State<activityWalk> {
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: const Text("Step tracker"),
+        title: const Text(
+          "Step Tracker",
+          style: TextStyle(fontFamily: "Signatra",
+          color: Colors.black,
+          fontSize: 50,),
+        ),
         centerTitle: true,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-             const Text(
-                      'My Observations',
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black,
-                          fontFamily: "ABCGinto",
-                          fontWeight: FontWeight.w300),
-                    ),
-                    const SizedBox(
-                      height: 4,
-                    ),
-                    const Text(
-                      'Statistics',
-                      style: TextStyle(
-                        color: ColorPallete.fontsColor,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w200,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 38,
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8),
-                        child: BarChart(
-                          isPlaying ? randomData() : mainBarData(),
-                          swapAnimationDuration: animDuration,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 12,
-                    ),
+            const Text(
+              'My Observations',
+              style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.black,
+                  fontFamily: "Signatra",),
+            ),
+            const SizedBox(
+              height: 4,
+            ),
+            const Text(
+              'Statistics',
+              style: TextStyle(
+                color: ColorPallete.fontsColor,
+                fontSize: 15,
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+            const SizedBox(
+              height: 38,
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: BarChart(
+                  isPlaying ? randomData() : mainBarData(),
+                  swapAnimationDuration: animDuration,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Align(
+                alignment: Alignment.topRight,
+                child: IconButton(
+                  icon: const Icon(
+                    Icons.more_vert,
+                  ),
+                  onPressed: () {
+                    _showBottomSheet(context);
+                  },
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 12,
+            ),
             const Text(
               'Steps taken:',
               style: TextStyle(fontSize: 20),
@@ -163,16 +180,17 @@ class _activityWalkState extends State<activityWalk> {
                     ? const TextStyle(fontSize: 30)
                     : const TextStyle(fontSize: 20, color: Colors.red),
               ),
-            )
+            ),
+             const SizedBox(
+              height: 20,
+            ),
           ],
         ),
       ),
     );
-
-
-    
   }
-    BarChartGroupData makeGroupData(
+
+  BarChartGroupData makeGroupData(
     int x,
     double y, {
     bool isTouched = false,
@@ -199,8 +217,7 @@ class _activityWalkState extends State<activityWalk> {
     );
   }
 
-
-   List<BarChartGroupData> showingGroups() => List.generate(7, (i) {
+  List<BarChartGroupData> showingGroups() => List.generate(7, (i) {
         switch (i) {
           case 0:
             return makeGroupData(0, 5, isTouched: i == touchedIndex);
@@ -315,7 +332,8 @@ class _activityWalkState extends State<activityWalk> {
       gridData: FlGridData(show: false),
     );
   }
-    Widget getTitles(double value, TitleMeta meta) {
+
+  Widget getTitles(double value, TitleMeta meta) {
     const style = TextStyle(
       color: Colors.grey,
       fontWeight: FontWeight.bold,
@@ -354,6 +372,7 @@ class _activityWalkState extends State<activityWalk> {
       child: text,
     );
   }
+
   BarChartData randomData() {
     return BarChartData(
       barTouchData: BarTouchData(
@@ -443,6 +462,102 @@ class _activityWalkState extends State<activityWalk> {
         }
       }),
       gridData: FlGridData(show: false),
+    );
+  }
+
+  Future<dynamic> refreshState() async {
+    setState(() {});
+    await Future<dynamic>.delayed(
+      animDuration + const Duration(milliseconds: 50),
+    );
+    if (isPlaying) {
+      await refreshState();
+    }
+  }
+
+  void _showBottomSheet(BuildContext context) {
+    List<Map<String, dynamic>> filters = [
+      {
+        "icon": "assets/icons/date.png",
+        "title": "Date",
+        "onTap": () {},
+      },
+      {
+        "icon": "assets/icons/type.png",
+        "title": "Type",
+        "onTap": () {},
+      },
+      {
+        "icon": "assets/icons/status.png",
+        "title": "Status",
+        "onTap": () {},
+      },
+      {
+        "icon": "assets/icons/category.png",
+        "title": "Category",
+        "onTap": () {},
+      },
+      {
+        "icon": "assets/icons/subcategory.png",
+        "title": "Subcategory",
+        "onTap": () {},
+      },
+      {
+        "icon": "assets/icons/tag.png",
+        "title": "Tag",
+        "onTap": () {},
+      },
+    ];
+
+    showModalBottomSheet(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(15),
+        ),
+      ),
+      context: context,
+      builder: (BuildContext context) {
+        return SizedBox(
+          height: 300 * MediaQuery.of(context).size.height / 600,
+          child: Column(
+            children: [
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Icon(
+                        Icons.close,
+                        color: ColorPallete.fontsColor,
+                      )),
+                  const Text(
+                    'Filter By',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  ),
+                  TextButton(onPressed: () {}, child: const Text("Clear"))
+                ],
+              ),
+              const SizedBox(height: 8),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: filters.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return ListTile(
+                      leading: Image.asset(filters[index]["icon"]),
+                      title: Text(filters[index]["title"]),
+                      trailing: Image.asset('assets/icons/arrow.png'),
+                      onTap: filters[index]["onTap"],
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

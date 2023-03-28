@@ -118,6 +118,7 @@ flutter:
         - asset: fonts/Signatra.ttf
         - asset: fonts/Signatra.otf
           style: italic
+         
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
