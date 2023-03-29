@@ -1,9 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
 import '../Components/google_sign_in_button.dart';
 import '../main.dart';
 import 'registration_screen.dart';
@@ -106,14 +103,14 @@ class _LoginScreenState extends State<LoginScreen> {
     final loginButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
-      color: Colors.redAccent,
+      color: Color.fromARGB(255, 46, 90, 184),
       child: MaterialButton(
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         onPressed: () {
           signIn(emailController.text, passwordController.text);
         },
-        child: Text(
+        child: const Text(
           "Login",
           textAlign: TextAlign.center,
           style: TextStyle(
@@ -148,7 +145,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: 200,
                       child: Image.asset(
-                        "assets/images/splash.png",
+                        "assets/images/1024.png",
                         fit: BoxFit.contain,
                       ),
                     ),
@@ -175,7 +172,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     builder: (context) =>
                                         RegistrationScreen()));
                           },
-                          child: Text(
+                          child: const Text(
                             "SignUp",
                             style: TextStyle(
                                 color: Colors.redAccent,

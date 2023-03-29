@@ -2,7 +2,6 @@ import 'package:carbon_icons/carbon_icons.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:keepghanaclean/pages/instructions_page.dart';
-
 import 'aboutuspage.dart';
 import 'login_screen.dart';
 
@@ -20,7 +19,7 @@ class SettingsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Settings'),
-        backgroundColor: Color.fromARGB(255, 182, 58, 58),
+        backgroundColor: Color.fromARGB(255, 46, 90, 184),
       ),
       body: Container(
         child: Column(

@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.keepghanaclean">
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
    <application
-        android:label="keepghanaclean"
+        android:label="Keep Ghana Clean"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

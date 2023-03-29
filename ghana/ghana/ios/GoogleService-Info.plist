@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>471275290842-kmbhtaapec7l6sluc628nb2l5smu9tnv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.471275290842-kmbhtaapec7l6sluc628nb2l5smu9tnv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDO5Ok9JGHIYO2F86WRPhIdlwwbOjpeoFA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>471275290842</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.capstone.keepghanaclean</string>
+	<key>PROJECT_ID</key>
+	<string>cleanghana-65958</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cleanghana-65958.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:471275290842:ios:82083573decedfb59665e3</string>
+</dict>
+</plist>

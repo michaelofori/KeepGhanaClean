@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>648475629951-r4ldd7og6dtaom40ot1sqkf459svc9ut.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.648475629951-r4ldd7og6dtaom40ot1sqkf459svc9ut</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBkN9BSddnr6dhSgwOzJfCKcofPK1gH_c4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>648475629951</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.keepghanaclean</string>
+	<key>PROJECT_ID</key>
+	<string>keepghclean-10113</string>
+	<key>STORAGE_BUCKET</key>
+	<string>keepghclean-10113.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:648475629951:ios:90ea4f315919d45178224a</string>
+</dict>
+</plist>

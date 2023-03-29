@@ -1,11 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:keepghanaclean/pages/login_screen.dart';
 import 'package:onboarding_screen/onboarding_screen.dart';
-
-
-
 
 class Onboarding extends StatefulWidget {
   const Onboarding({Key? key}) : super(key: key);
@@ -21,7 +17,7 @@ class _OnboardingState extends State<Onboarding> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-     return OnBoardingScreen(
+    return OnBoardingScreen(
       label: const Text(
         'Get Started',
         key: Key('get_started'),
@@ -39,62 +35,93 @@ class _OnboardingState extends State<Onboarding> {
 
       /// This [mySlides] must not be more than 5.
       mySlides: [
-    _SliderModel(
-      imageAssetPath: Image.asset(
-        'assets/images/splash.png',
-        scale: 1,
-      ),
-      title: 'Middlemen Garage',
-      desc: 'Discover people and cars',
-      minTitleFontSize: 10,
-      descStyle: const TextStyle(
-        fontSize: 12,
-        fontWeight: FontWeight.w400,
-        color: Colors.black,
-      ),
-      titleStyle: const TextStyle(
-        fontSize: 20,
-        fontWeight: FontWeight.w400,
-        color: Colors.black,
-      ),
-    ),
-    _SliderModel(
-      imageAssetPath: SvgPicture.asset('assets/icons/s1.svg',
-      width: size.width * 0.8,
-      height: size.height *0.5,
-      fit: BoxFit.fitHeight,
-      ),
-      title: 'Ease',
-      desc: 'Stress free platform to search for cars',
-    ),
-    _SliderModel(
-      imageAssetPath: SvgPicture.asset('assets/icons/s2.svg',
-      
-      width: size.width * 0.8,
-      height: size.height *0.5,
-      fit: BoxFit.fitHeight,),
-      title: 'Discover new cars',
-      desc: 'Drive the best cars',
-    ),
-    _SliderModel(
-      imageAssetPath: SvgPicture.asset('assets/icons/s3.svg',
-      
-      width: size.width * 0.8,
-      height: size.height *0.5,
-      fit: BoxFit.fitHeight,),
-      title: 'Garages',
-      desc: 'Link up with the best garages in Accra',
-    ),
-    _SliderModel(
-      imageAssetPath: SvgPicture.asset('assets/icons/s4.svg',
-      
-      width: size.width * 0.8,
-      height: size.height *0.5,
-      fit: BoxFit.fitHeight,),
-      title: 'Discover cars',
-      desc: 'Don\'t stress we\'ve got you... ',
-    ),
-  ],
+        _SliderModel(
+          imageAssetPath: SvgPicture.asset(
+            'assets/icons/on1.svg',
+            width: size.width * 0.8,
+            height: size.height * 0.5,
+            fit: BoxFit.fitHeight,
+          ),
+          title: 'Recycle',
+          desc: 'Lets keep Ghana clean',
+        ),
+        _SliderModel(
+          imageAssetPath: Image.asset(
+            'assets/icons/on2.svg',
+            scale: 2,
+          ),
+          title: 'Collect waste',
+          desc: 'Help clean the environnment',
+          minTitleFontSize: 10,
+          descStyle: const TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            color: Colors.black,
+          ),
+          titleStyle: const TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w400,
+            color: Colors.black,
+          ),
+        ),
+        _SliderModel(
+          imageAssetPath: Image.asset(
+            'assets/icons/center.jpg',
+            scale: 2,
+          ),
+          title: 'Drop Point',
+          desc: 'Locate the drop center on the map',
+          minTitleFontSize: 10,
+          descStyle: const TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            color: Colors.black,
+          ),
+          titleStyle: const TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w400,
+            color: Colors.black,
+          ),
+        ),
+        _SliderModel(
+          imageAssetPath: Image.asset(
+            'assets/icons/clean.jpg',
+            scale: 2,
+          ),
+          title: 'Sanitation',
+          desc: 'Lets help keep our streets clean!!!',
+          minTitleFontSize: 10,
+          descStyle: const TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            color: Colors.black,
+          ),
+          titleStyle: const TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w400,
+            color: Colors.black,
+          ),
+        ),
+        _SliderModel(
+          imageAssetPath: Image.asset(
+            'assets/icons/flame.jpg',
+            scale: 2,
+          ),
+          title: 'Global Warming',
+          desc: 'Global warming is not a prediction it is happening',
+          minTitleFontSize: 10,
+          descStyle: const TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            color: Colors.black,
+          ),
+          titleStyle: const TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w400,
+            color: Colors.black,
+          ),
+        ),
+      ],
       controller: _controller,
       slideIndex: 0,
       statusBarColor: Colors.white,
@@ -115,11 +142,6 @@ class _OnboardingState extends State<Onboarding> {
       ],
     );
   }
-    
-
-  
- 
-
 }
 
 class _SliderModel {

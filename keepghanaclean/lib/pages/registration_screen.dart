@@ -3,9 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:keepghanaclean/main.dart';
-
-import 'package:keepghanaclean/pages/home.dart';
-
 import '../model/user_model.dart';
 
 class RegistrationScreen extends StatefulWidget {
@@ -172,7 +169,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     final signUpButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
-      color: Colors.redAccent,
+      color: Color.fromARGB(255, 46, 90, 184),
       child: MaterialButton(
           padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
@@ -215,7 +212,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     SizedBox(
                         height: 180,
                         child: Image.asset(
-                          "assets/images/splash.png",
+                          "assets/images/1024.png",
                           fit: BoxFit.contain,
                         )),
                     SizedBox(height: 45),
