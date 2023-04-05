@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:keepghanaclean/pages/aboutuspage.dart';
 import 'package:keepghanaclean/pages/home_page.dart';
+
 import 'package:keepghanaclean/pages/instructions_page.dart';
 import 'package:keepghanaclean/pages/league_table.dart';
 import 'package:keepghanaclean/pages/location_sites.dart';
@@ -14,6 +15,7 @@ import 'package:keepghanaclean/pages/splash.dart';
 import 'package:keepghanaclean/pages/upload.dart';
 import 'firebase_options.dart';
 import 'model/user_model.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -295,19 +297,12 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             selected: _pageColors[4],
             onTap: () {
               _setPage(context, 4);
-              // setState(
-              //   () {
-              //     contactUsColor = true;
-              //     homeColor = false;
-              //     cartColor = false;
-              //     aboutColor = false;
-              //     logOut = false;
-              //   },
-              // );
-              //    Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) =>  RedeemProduct()),
-              // );
+              
+                 Navigator.push(
+                context,
+                  //  MaterialPageRoute(builder: (context) => UserScreen()),
+                MaterialPageRoute(builder: (context) => RedeemProduct() ),
+              );
             },
             leading: const Icon(Icons.redeem_outlined),
             title: const Text("Redeem Products"),
@@ -319,7 +314,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
            
               // Navigator.push(
               //   context,
-              //   MaterialPageRoute(builder: (context) => const RedeemProduct()),
+              //   // MaterialPageRoute(builder: (context) => const HomeScreen(title: 'Waste Classifier')),
               // );
             },
             leading: const Icon(Icons.support_agent_rounded),
