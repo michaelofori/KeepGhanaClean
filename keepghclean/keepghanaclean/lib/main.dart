@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:image_picker/image_picker.dart';
+// import 'package:keepghanaclean/news/views/homepage.dart';
 import 'package:keepghanaclean/pages/aboutuspage.dart';
 import 'package:keepghanaclean/pages/home_page.dart';
 
@@ -13,6 +14,9 @@ import 'package:keepghanaclean/pages/redeemproducts.dart';
 import 'package:keepghanaclean/pages/settings.dart';
 import 'package:keepghanaclean/pages/splash.dart';
 import 'package:keepghanaclean/pages/upload.dart';
+import 'package:keepghanaclean/steps/features/bottom_navbar/presentation/pages/home_page.dart';
+import 'package:keepghanaclean/steps/features/bottom_navbar/presentation/pages/leaderboard_page.dart';
+import 'package:keepghanaclean/steps/features/intro/presentation/pages/intro_page.dart';
 import 'firebase_options.dart';
 import 'model/user_model.dart';
 
@@ -287,11 +291,26 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => LeagueTable()),
+               // MaterialPageRoute(builder: (context) => LeagueTable()),
+                MaterialPageRoute(builder: (context) => const HomePAge2()),
               );
             },
             leading: const Icon(Icons.leaderboard_sharp),
             title: const Text("League Table"),
+          ),
+               ListTile(
+            selected: _pageColors[3],
+            onTap: () {
+              _setPage(context, 3);
+
+              // Navigator.push(
+              //   context,
+              //  // MaterialPageRoute(builder: (context) => LeagueTable()),
+              //   // MaterialPageRoute(builder: (context) => NewsPage()),
+              // );
+            },
+            leading: const Icon(Icons.newspaper_outlined),
+            title: const Text("News"),
           ),
           ListTile(
             selected: _pageColors[4],
