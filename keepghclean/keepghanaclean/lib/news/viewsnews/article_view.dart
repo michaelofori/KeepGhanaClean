@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+import '../helpernews/news.dart';
+
 class ArticleView extends StatefulWidget {
 
   final String postUrl;
@@ -15,8 +17,14 @@ class ArticleView extends StatefulWidget {
 class _ArticleViewState extends State<ArticleView> {
 
   final Completer<WebViewController> _controller = Completer<WebViewController>();
+  final getnew = new News();
+
+
+ // getnew.getNews();
   @override
   Widget build(BuildContext context) {
+    final news2 = getnew.getNews();
+    print(news2);
     return Scaffold(
       appBar: AppBar(
         title: Row(

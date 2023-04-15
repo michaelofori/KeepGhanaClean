@@ -38,15 +38,19 @@ class _NewsPageState extends State<NewsPage> {
     getNews();
   }
 
+  final getnew = new News();
+
   @override
   Widget build(BuildContext context) {
+    final news2 = getnew.getNews();
+    print(news2);
     return Scaffold(
       appBar:  AppBar(
     title: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: const <Widget>[
         Text(
-          "Flutter",
+          "Sanitation ",
           style:
           TextStyle(color: Colors.black87, fontWeight: FontWeight.w600),
         ),
