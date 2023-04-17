@@ -14,9 +14,6 @@ import 'package:keepghanaclean/pages/redeemproducts.dart';
 import 'package:keepghanaclean/pages/settings.dart';
 import 'package:keepghanaclean/pages/splash.dart';
 import 'package:keepghanaclean/pages/upload.dart';
-import 'package:keepghanaclean/steps/features/bottom_navbar/presentation/pages/home_page.dart';
-import 'package:keepghanaclean/steps/features/bottom_navbar/presentation/pages/leaderboard_page.dart';
-import 'package:keepghanaclean/steps/features/intro/presentation/pages/intro_page.dart';
 import 'firebase_options.dart';
 import 'model/user_model.dart';
 import 'news/viewsnews/homepage.dart';
@@ -292,8 +289,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
               Navigator.push(
                 context,
-               // MaterialPageRoute(builder: (context) => LeagueTable()),
-                MaterialPageRoute(builder: (context) => const HomePAge2()),
+                MaterialPageRoute(builder: (context) => LeagueTable()),
+               // MaterialPageRoute(builder: (context) => const HomePAge2()),
               );
             },
             leading: const Icon(Icons.leaderboard_sharp),
