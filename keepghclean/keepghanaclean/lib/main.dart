@@ -306,8 +306,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
               Navigator.push(
                 context,
-               // MaterialPageRoute(builder: (context) => LeagueTable()),
-                 MaterialPageRoute(builder: (context) => NewsPage()),
+               MaterialPageRoute(builder: (context) => LeagueTable()),
+                // MaterialPageRoute(builder: (context) => NewsPage()),
               );
             },
             leading: const Icon(Icons.newspaper_outlined),

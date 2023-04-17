@@ -1,9 +1,6 @@
-
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:http/http.dart';
 import 'package:keepghanaclean/model/post_comment_model.dart';
 import 'package:keepghanaclean/model/post_model.dart';
 
@@ -91,15 +88,15 @@ class DatabaseService{
     if ((await like.count().get()).count == 1){
       //User has already liked the post
       await (await like.get()).docs.first.reference.delete();
-        print("likes00 - deleted like");
+       // print("likes00 - deleted like");
 
     } else {
       //Record a new like
      await fire.collection("post_likes").doc().set({"postId" : postId, "userId" : userId});
 
-        print("likes00 - new like");
+        //print("likes00 - new like");
       }
-    print("likes00");
+   // print("likes00");
 
   }
 

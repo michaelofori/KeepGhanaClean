@@ -52,8 +52,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         },
         textInputAction: TextInputAction.next,
         decoration: InputDecoration(
-          prefixIcon: Icon(Icons.account_circle),
-          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          prefixIcon: const Icon(Icons.account_circle),
+          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "First Name",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
@@ -76,8 +76,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         },
         textInputAction: TextInputAction.next,
         decoration: InputDecoration(
-          prefixIcon: Icon(Icons.account_circle),
-          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          prefixIcon: const Icon(Icons.account_circle),
+          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Second Name",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
@@ -105,8 +105,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         },
         textInputAction: TextInputAction.next,
         decoration: InputDecoration(
-          prefixIcon: Icon(Icons.mail),
-          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          prefixIcon: const Icon(Icons.mail),
+          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Email",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
@@ -132,8 +132,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         },
         textInputAction: TextInputAction.next,
         decoration: InputDecoration(
-          prefixIcon: Icon(Icons.vpn_key),
-          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          prefixIcon: const Icon(Icons.vpn_key),
+          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Password",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
@@ -157,8 +157,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         },
         textInputAction: TextInputAction.done,
         decoration: InputDecoration(
-          prefixIcon: Icon(Icons.vpn_key),
-          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          prefixIcon: const Icon(Icons.vpn_key),
+          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Confirm Password",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
@@ -169,14 +169,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     final signUpButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
-      color: Color.fromARGB(255, 46, 90, 184),
+      color: const Color.fromARGB(255, 46, 90, 184),
       child: MaterialButton(
-          padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () {
             signUp(emailEditingController.text, passwordEditingController.text);
           },
-          child: Text(
+          child: const Text(
             "SignUp",
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -190,7 +190,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.red),
+          icon: const Icon(Icons.arrow_back, color: Colors.red),
           onPressed: () {
             // passing this to our root
             Navigator.of(context).pop();
@@ -215,19 +215,19 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           "assets/images/1024.png",
                           fit: BoxFit.contain,
                         )),
-                    SizedBox(height: 45),
+                    const SizedBox(height: 45),
                     firstNameField,
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     secondNameField,
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     emailField,
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     passwordField,
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     confirmPasswordField,
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     signUpButton,
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
                   ],
                 ),
               ),
@@ -277,9 +277,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     }
   }
   postDetailsToFirestore() async {
-    // calling our firestore
-    // calling our user model
-    // sedning these values
 
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
     User? user = _auth.currentUser;
@@ -295,11 +292,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
     await user.updateDisplayName("${firstNameEditingController.text} ${secondNameEditingController.text}");
     
-
-    // await firebaseFirestore
-    //     .collection("users")
-    //     .doc(user.uid)
-    //     .set(userModel.toMap());
     Fluttertoast.showToast(msg: "Account created successfully :) ");
 
     Navigator.pushAndRemoveUntil(

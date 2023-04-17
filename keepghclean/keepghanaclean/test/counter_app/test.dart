@@ -11,3 +11,16 @@
 //     });    
 //   });
 // }
+
+// import 'package:flutter_test/flutter_test.dart';
+// import 'package:keepghanaclean/pages/home_page.dart';
+
+// void main() {
+//   group('_MyStatefulWidgetState', () {
+//     test('sets the correct value for _pageColors', () {
+//       final state = Home();
+//       state._setPage(null, 2);
+//       expect(state._pageColors, [false, false, true, false, false, false, false, false]);
+//     });
+//   });
+// }
