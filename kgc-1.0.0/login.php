@@ -1,100 +1,103 @@
-<?php
-include "db.php";
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <style>
+      /* Center align the form */
+      form {
+        max-width: 400px;
+        margin: auto;
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-family: Arial, sans-serif;
+        position: relative;
+        z-index: 1;
+      }
 
-session_start();
+      /* Style the container element */
+      .container {
+        background-image: url("images/hand-sanitizer-gffcdc7c86_1920.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        position: relative;
+        z-index: 0;
+      }
 
-#Login script is begin here
-#If user given credential matches successfully with the data available in database then we will echo string login_success
-#login_success string will go back to called Anonymous funtion $("#login").click() 
+      /* Style the form elements */
+      input[type=text], input[type=password], input[type=email], select, textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+        color: #333;
+      }
 
-if(isset($_POST["email"]) && isset($_POST["password"])){
-	$email = mysqli_real_escape_string($con,$_POST["email"]);
-	$password = $_POST["password"];
-	$sql = "SELECT * FROM user_info WHERE email = '$email' AND password = '$password'";
-	$run_query = mysqli_query($con,$sql);
-	$count = mysqli_num_rows($run_query);
-    $row = mysqli_fetch_array($run_query);
-		$_SESSION["uid"] = $row["user_id"];
-		$_SESSION["name"] = $row["first_name"];
-		$ip_add = getenv("REMOTE_ADDR");
-		//we have created a cookie in login_form.php page so if that cookie is available means user is not login
-        
-	//if user record is available in database then $count will be equal to 1
-	if($count == 1){
-		   	
-			if (isset($_COOKIE["product_list"])) {
-				$p_list = stripcslashes($_COOKIE["product_list"]);
-				//here we are decoding stored json product list cookie to normal array
-				$product_list = json_decode($p_list,true);
-				for ($i=0; $i < count($product_list); $i++) { 
-					//After getting user id from database here we are checking user cart item if there is already product is listed or not
-					$verify_cart = "SELECT id FROM cart WHERE user_id = $_SESSION[uid] AND p_id = ".$product_list[$i];
-					$result  = mysqli_query($con,$verify_cart);
-					if(mysqli_num_rows($result) < 1){
-						//if user is adding first time product into cart we will update user_id into database table with valid id
-						$update_cart = "UPDATE cart SET user_id = '$_SESSION[uid]' WHERE ip_add = '$ip_add' AND user_id = -1";
-						mysqli_query($con,$update_cart);
-					}else{
-						//if already that product is available into database table we will delete that record
-						$delete_existing_product = "DELETE FROM cart WHERE user_id = -1 AND ip_add = '$ip_add' AND p_id = ".$product_list[$i];
-						mysqli_query($con,$delete_existing_product);
-					}
-				}
-				//here we are destroying user cookie
-				setcookie("product_list","",strtotime("-1 day"),"/");
-				//if user is logging from after cart page we will send cart_login
-				echo "cart_login";
-				
-				
-				exit();
-				
-			}
-			//if user is login from page we will send login_success
-			echo "login_success";
-			$BackToMyPage = $_SERVER['HTTP_REFERER'];
-				if(!isset($BackToMyPage)) {
-					header('Location: '.$BackToMyPage);
-					echo"<script type='text/javascript'>
-					
-					</script>";
-				} else {
-					header('Location: index.php'); // default page
-				} 
-				
-			
-            exit;
+      input[type=submit], .google-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
 
-		}else{
-                $email = mysqli_real_escape_string($con,$_POST["email"]);
-                $password =md5($_POST["password"]) ;
-                $sql = "SELECT * FROM admin_info WHERE admin_email = '$email' AND admin_password = '$password'";
-                $run_query = mysqli_query($con,$sql);
-                $count = mysqli_num_rows($run_query);
+      input[type=submit]:hover, .google-button:hover {
+        background-color: #45a049;
+      }
 
-            //if user record is available in database then $count will be equal to 1
-            if($count == 1){
-                $row = mysqli_fetch_array($run_query);
-                $_SESSION["uid"] = $row["admin_id"];
-                $_SESSION["name"] = $row["admin_name"];
-                $ip_add = getenv("REMOTE_ADDR");
-                //we have created a cookie in login_form.php page so if that cookie is available means user is not login
+      .google-button {
+        background-color: #dd4b39;
+      }
 
+      label {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: left;
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+      }
 
-                    //if user is login from page we will send login_success
-                    echo "login_success";
+      /* Semi-transparent background overlay */
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        z-index: -1;
+      }
+    </style>
+  </head>
 
-                    echo "<script> location.href='admin/addproduct.php'; </script>";
-                    exit;
+  <body>
+    <div class="container">
+      <div class="overlay"></div>
+      <h1 style="text-align:center; font-family: Arial, sans-serif; color: #fff;">Login</h1>
+      <form action="login_process.php" method="POST">
+        <label for="email_or_username">Email or Username:</label>
+        <input type="text" id="email_or_username" name="email_or_username" required>
 
-                }else{
-                    echo "<span style='color:red;'>Please register before login..!</span>";
-                    exit();
-                }
-    
-	
-}
-    
-	
-}
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
 
-?>
+        <label for="remember_me">Remember Me:</label>
+        <input type="checkbox" id="remember_me" name="remember_me">
+
+        <input type="submit" value="Login">
+        <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI
+      </form>
+       <p><a href="signup.html">Don't have an account? Sign up here!</a></p>
+    </body>
+</html>
