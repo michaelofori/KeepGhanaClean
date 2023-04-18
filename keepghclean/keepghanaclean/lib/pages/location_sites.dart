@@ -114,55 +114,55 @@ String address = "null";
               }
             },
           ),
-          OutlinedButton(
-            child: Text('show dialog'.toUpperCase()),
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: const Text('Example'),
-                    content: PlacesAutocomplete(
-                      apiKey: "AIzaSyCsDG0wJUNnciSuJpnVd95JcxxmtOtgBJA",
-                      searchHintText: "Search for drop point",
-                      mounted: mounted,
-                      showBackButton: false,
-                      initialValue: initialValue,
-                      onSuggestionSelected: (value) {
-                        setState(() {
-                          autocompletePlace =
-                              value.structuredFormatting?.mainText ?? "";
-                          initialValue = value;
-                        });
-                      },
-                      onGetDetailsByPlaceId: (value) {
-                        setState(() {
-                          address = value?.result.formattedAddress ?? "";
-                        });
-                      },
-                    ),
-                    actions: <Widget>[
-                      TextButton(
-                        child: const Text('Done'),
-                        onPressed: () => Navigator.of(context).pop(),
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
-          ),
+          // OutlinedButton(
+          //   child: Text('show dialog'.toUpperCase()),
+          //   onPressed: () {
+          //     showDialog(
+          //       context: context,
+          //       builder: (context) {
+          //         return AlertDialog(
+          //           title: const Text('Example'),
+          //           content: PlacesAutocomplete(
+          //             apiKey: "AIzaSyCsDG0wJUNnciSuJpnVd95JcxxmtOtgBJA",
+          //             searchHintText: "Search for drop point",
+          //             mounted: mounted,
+          //             showBackButton: false,
+          //             initialValue: initialValue,
+          //             onSuggestionSelected: (value) {
+          //               setState(() {
+          //                 autocompletePlace =
+          //                     value.structuredFormatting?.mainText ?? "";
+          //                 initialValue = value;
+          //               });
+          //             },
+          //             onGetDetailsByPlaceId: (value) {
+          //               setState(() {
+          //                 address = value?.result.formattedAddress ?? "";
+          //               });
+          //             },
+          //           ),
+          //           actions: <Widget>[
+          //             TextButton(
+          //               child: const Text('Done'),
+          //               onPressed: () => Navigator.of(context).pop(),
+          //             ),
+          //           ],
+          //         );
+          //       },
+          //     );
+          //   },
+          // ),
           const Spacer(),
           const Padding(
             padding: EdgeInsets.all(8.0),
-            child: Text(
-              "Recycle Sites",
-              textAlign: TextAlign.center,
-              textScaleFactor: 1.2,
-              style: TextStyle(
-                color: Colors.grey,
-              ),
-            ),
+            // child: Text(
+            //   "Monitor from our web apge",
+            //   textAlign: TextAlign.center,
+            //   textScaleFactor: 1.2,
+            //   style: TextStyle(
+            //     color: Colors.grey,
+            //   ),
+            // ),
           ),
           TextButton(
             onPressed: () => Clipboard.setData(
@@ -179,7 +179,7 @@ String address = "null";
           const Spacer(),
           Center(
             child: ElevatedButton(
-              child: const Text('Pick location'),
+              child: const Text('View Recycle Sites '),
               onPressed: () async {
                 Navigator.push(
                   context,
@@ -213,7 +213,7 @@ String address = "null";
           ),
           const Spacer(),
           ListTile(
-            title: Text("Geocoded Address: $address"),
+            title: Text("Location Site Address: $address"),
           ),
           ListTile(
             title: Text("Autocomplete Address: $autocompletePlace"),

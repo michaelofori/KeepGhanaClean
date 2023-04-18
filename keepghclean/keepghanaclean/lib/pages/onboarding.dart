@@ -35,28 +35,20 @@ class _OnboardingState extends State<Onboarding> {
       /// This [mySlides] must not be more than 5.
       mySlides: [
         _SliderModel(
-          
           imageAssetPath: SvgPicture.asset(
             'assets/icons/on1.svg',
-            
             width: size.width * 0.8,
             height: size.height * 0.5,
             fit: BoxFit.fitHeight,
           ),
           title: 'Recycle',
           desc: 'Avoid throwing recyclables in the trash.',
-          
         ),
         _SliderModel(
-                    
           imageAssetPath: Image.asset(
-            
-            'assets/images/clean.png', 
-            
+            'assets/images/clean.png',
             scale: 2,
-            
           ),
-         
           title: 'Collect waste',
           desc: 'Help clean to keep Ghana Clean today',
           minTitleFontSize: 10,
@@ -92,8 +84,8 @@ class _OnboardingState extends State<Onboarding> {
         ),
         _SliderModel(
           imageAssetPath: Image.asset(
-            'assets/images/clean2.png', 
-            scale: 2,  
+            'assets/images/clean2.png',
+            scale: 2,
           ),
           title: 'Sanitation',
           desc: 'Lets help keep our streets clean!!!',
@@ -156,7 +148,7 @@ class _SliderModel {
     this.imageAssetPath,
     this.title = "title",
     this.desc = "title",
-    this.miniDescFontSize = 18.0, 
+    this.miniDescFontSize = 18.0,
     this.minTitleFontSize = 28.0,
     this.descStyle,
     this.titleStyle,
