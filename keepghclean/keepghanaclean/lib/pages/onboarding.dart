@@ -13,8 +13,6 @@ class Onboarding extends StatefulWidget {
 class _OnboardingState extends State<Onboarding> {
   final PageController _controller = PageController();
 
-  
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -34,9 +32,6 @@ class _OnboardingState extends State<Onboarding> {
           ),
         );
       },
-
-      
-
       /// This [mySlides] must not be more than 5.
       mySlides: [
         _SliderModel(
@@ -49,13 +44,15 @@ class _OnboardingState extends State<Onboarding> {
             fit: BoxFit.fitHeight,
           ),
           title: 'Recycle',
-          desc: 'Lets keep Ghana clean',
+          desc: 'Avoid throwing recyclables in the trash.',
           
         ),
         _SliderModel(
                     
           imageAssetPath: Image.asset(
-            'assets/images/clean.jpg',
+            
+            'assets/images/clean.png', 
+            
             scale: 2,
             
           ),
@@ -95,8 +92,8 @@ class _OnboardingState extends State<Onboarding> {
         ),
         _SliderModel(
           imageAssetPath: Image.asset(
-            'assets/icons/clean.jpg',
-            scale: 2,
+            'assets/images/clean2.png', 
+            scale: 2,  
           ),
           title: 'Sanitation',
           desc: 'Lets help keep our streets clean!!!',
@@ -114,7 +111,7 @@ class _OnboardingState extends State<Onboarding> {
         ),
         _SliderModel(
           imageAssetPath: Image.asset(
-            'assets/icons/flame.jpg',
+            'assets/icons/flame.png',
             scale: 2,
           ),
           title: 'Global Warming',
@@ -159,8 +156,8 @@ class _SliderModel {
     this.imageAssetPath,
     this.title = "title",
     this.desc = "title",
-    this.miniDescFontSize = 12.0,
-    this.minTitleFontSize = 15.0,
+    this.miniDescFontSize = 18.0, 
+    this.minTitleFontSize = 28.0,
     this.descStyle,
     this.titleStyle,
   });
