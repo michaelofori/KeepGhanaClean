@@ -12,7 +12,7 @@ class _LeagueTableState extends State<LeagueTable> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade500,
+      backgroundColor: Color.fromARGB(255, 198, 209, 218),
       appBar: AppBar(
         title: const Text(
           "League Table",
@@ -44,7 +44,7 @@ class _LeagueTableState extends State<LeagueTable> {
         children: [
           Container(
               width: double.maxFinite,
-              color: Colors.red,
+              color: Color.fromARGB(255, 60, 89, 218),
               padding: EdgeInsets.all(20),
               child: Center(
                   child: Text(
@@ -56,23 +56,62 @@ class _LeagueTableState extends State<LeagueTable> {
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
                 return Expanded(
-                  child: ListView.builder(
-                      itemCount: 7, //list size plus 1
-                      itemBuilder: (context, index) => index == 6
-                          ? Container(
-                              padding: EdgeInsets.all(12),
-                              child: Center(
-                                  child: Text("That's all folks",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleMedium),),
-                            )
-                          : ListTile(
-                              leading: Icon(Icons.person_4_sharp),
-                              title: Text(" Username $index"),
-                              trailing: Text("290 Km tracked"),
-                            )),
-                );
+                    child: ListView(
+                  children: const [
+                    ListTile(
+                      leading: Icon(Icons.person_2_outlined),
+                      title: Text('aliceli'),
+                      trailing: Text("15.2 km"),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.person_2_outlined),
+                      title: Text('janedoe'),
+                      trailing: Text("12.6 km"),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.person_2_outlined),
+                      title: Text('johndoe'),
+                      trailing: Text("10.5 km"),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.person_2_outlined),
+                      title: Text('aliceli'),
+                      trailing: Text("9.8 km"),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.person_2_outlined),
+                      title: Text('johndoe'),
+                      trailing: Text("8.2 km"),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.person_2_outlined),
+                      title: Text('bobsmith'),
+                      trailing: Text("6.7 km"),
+                    ),
+                                      
+                  ],
+                )
+                    // child: ListView.builder(
+                    //   itemCount: 7, //list size plus 1
+                    //   itemBuilder: (context, index) => index == 6
+                    //       ? Container(
+                    //           padding: EdgeInsets.all(12),
+                    //           child: Center(
+                    //             child: Text("That's all folks",
+                    //                 style:
+                    //                     Theme.of(context).textTheme.titleMedium),
+                    //           ),
+                    //         )
+                    //       : const ListTile(
+                    //           leading: Icon(Icons.flight),
+                    //           title: Text('Flight'),
+                    //           trailing: Icon(Icons.more_vert),
+                    //           // leading: Icon(Icons.person_4_sharp),
+                    //           // title: Text(" Username $index"),
+                    //           // trailing: Text("290 Km tracked"),
+                    //         ),
+                    // ),
+                    );
               }
               return circularProgressIndicator();
             },

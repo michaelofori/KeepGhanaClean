@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:image_picker/image_picker.dart';
-// import 'package:keepghanaclean/news/views/homepage.dart';
 import 'package:keepghanaclean/pages/aboutuspage.dart';
 import 'package:keepghanaclean/pages/home_page.dart';
-
 import 'package:keepghanaclean/pages/instructions_page.dart';
 import 'package:keepghanaclean/pages/league_table.dart';
 import 'package:keepghanaclean/pages/location_sites.dart';
@@ -17,7 +15,6 @@ import 'package:keepghanaclean/pages/upload.dart';
 import 'firebase_options.dart';
 import 'model/user_model.dart';
 import 'news/viewsnews/homepage.dart';
-
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,7 +33,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: _title,
         theme: ThemeData(
-          // fontFamily: 'Roboto',
           fontFamily: "Signatra",
           primarySwatch: Colors.blue,
           colorScheme:
@@ -62,7 +58,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
 
-  List<bool> _pageColors = List.generate(8, (index) => index == 0);
+  List<bool> _pageColors = List.generate(10, (index) => index == 0);
 
   int currentIndex = 0;
 
@@ -82,7 +78,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
-    // FirebaseFirestore.instance.collection().where().orderBy()
     return Scaffold(
       key: _key,
       appBar: [
@@ -98,7 +93,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           centerTitle: true,
           elevation: 0.1,
           backgroundColor: Theme.of(context).accentColor,
-          // backgroundColor: Color.fromARGB(255, 46, 90, 184),
           leading: IconButton(
             icon: const Icon(
               Icons.menu,
@@ -192,20 +186,19 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           UserAccountsDrawerHeader(
             decoration:
                 const BoxDecoration(color: Color.fromARGB(255, 37, 47, 138)),
-           currentAccountPicture:  CircleAvatar(
-                radius: 50.0,
-               // primarySwatch: Colors.blue,
-                backgroundColor: Colors.blue,
-               backgroundImage: NetworkImage(user!.photoURL!),
-                // backgroundImage:
-                
-                    // NetworkImage("http://tineye.com/images/widgets/mona.jpg"),
-              ),
+            currentAccountPicture: CircleAvatar(
+              radius: 50.0,
+              // primarySwatch: Colors.blue,
+              backgroundColor: Colors.blue,
+              backgroundImage: NetworkImage(user!.photoURL!),
+              // backgroundImage:
+
+              // NetworkImage("http://tineye.com/images/widgets/mona.jpg"),
+            ),
             accountName: Text(
               user!.displayName ?? "user name",
               style: const TextStyle(color: Colors.black),
             ),
-            
             accountEmail: Text(
               user!.email!,
               style: const TextStyle(
@@ -290,45 +283,45 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => LeagueTable()),
-               // MaterialPageRoute(builder: (context) => const HomePAge2()),
+                // MaterialPageRoute(builder: (context) => const HomePAge2()),
               );
             },
             leading: const Icon(Icons.leaderboard_sharp),
             title: const Text("League Table"),
           ),
-               ListTile(
-            selected: _pageColors[3],
+          ListTile(
+            selected: _pageColors[4],
             onTap: () {
-              _setPage(context, 3);
+              _setPage(context, 4);
 
               Navigator.push(
                 context,
-               MaterialPageRoute(builder: (context) => LeagueTable()),
-                // MaterialPageRoute(builder: (context) => NewsPage()),
+              //  MaterialPageRoute(builder: (context) => LeagueTable()),
+                 MaterialPageRoute(builder: (context) => NewsPage()),
               );
             },
             leading: const Icon(Icons.newspaper_outlined),
             title: const Text("News"),
           ),
           ListTile(
-            selected: _pageColors[4],
+            selected: _pageColors[5],
             onTap: () {
-              _setPage(context, 4);
-              
-                 Navigator.push(
+              _setPage(context, 5);
+
+              Navigator.push(
                 context,
-                  //  MaterialPageRoute(builder: (context) => UserScreen()),
-                MaterialPageRoute(builder: (context) => RedeemProduct() ),
+                //  MaterialPageRoute(builder: (context) => UserScreen()),
+                MaterialPageRoute(builder: (context) => RedeemProduct()),
               );
             },
             leading: const Icon(Icons.redeem_outlined),
             title: const Text("Redeem Products"),
           ),
           ListTile(
-            selected: _pageColors[5],
+            selected: _pageColors[6],
             onTap: () {
-              _setPage(context, 5);
-           
+              _setPage(context, 6);
+
               // Navigator.push(
               //   context,
               //   // MaterialPageRoute(builder: (context) => const HomeScreen(title: 'Waste Classifier')),
@@ -338,19 +331,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             title: const Text("Support Center"),
           ),
           ListTile(
-            selected: _pageColors[6],
+            selected: _pageColors[7],
             onTap: () {
-              // setState(
-              //   () {
-              //     contactUsColor = true;
-              //     homeColor = false;
-              //     cartColor = false;
-              //     aboutColor = false;
-              //     logOut = false;
-              //   },
-              // );
-
-              _setPage(context, 6);
+              _setPage(context, 7);
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -361,18 +344,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             title: const Text("Instructions Page"),
           ),
           ListTile(
-            selected: _pageColors[7],
+            selected: _pageColors[8],
             onTap: () {
-              _setPage(context, 7);
-              // setState(
-              //   () {
-              //     contactUsColor = true;
-              //     homeColor = false;
-              //     cartColor = false;
-              //     aboutColor = false;
-              //     logOut = false;
-              //   },
-              // );
+              _setPage(context, 8);
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const AboutUsPage()),
