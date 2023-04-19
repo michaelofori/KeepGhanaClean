@@ -18,7 +18,7 @@ class UserDetails {
     data['displayName'] = this.displayName;
     data['email'] = this.email;
     data['photoUrl]'] = this.photoURL;
-
+    
     return data;
     
   }
