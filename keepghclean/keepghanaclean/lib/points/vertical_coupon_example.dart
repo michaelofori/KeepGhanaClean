@@ -11,7 +11,7 @@ class VerticalCouponExample extends StatelessWidget {
       curvePosition: 180,
       curveRadius: 30,
       borderRadius: 10,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
             Color.fromARGB(255, 192, 203, 223),

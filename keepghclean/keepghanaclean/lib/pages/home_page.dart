@@ -27,6 +27,7 @@ class HomePage extends StatelessWidget {
   _signOut() async {
     await _firebaseAuth.signOut();
   }
+
   // sign user out method
   void signUserOut() {
     FirebaseAuth.instance.signOut();
@@ -49,7 +50,7 @@ class HomePage extends StatelessWidget {
             ],
             future: Future.wait([
               Future.delayed(
-                  Duration(seconds: 3), () => {'distance': 26233, 'time': 12}),
+                  Duration(seconds: 3), () => {'distance': 262, 'time': 12}),
               Future.delayed(Duration(seconds: 6), () => {}),
             ]),
             builder: ((context, snapshot) => Column(
@@ -64,7 +65,7 @@ class HomePage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>  activityWalk()),
+                              builder: (context) => activityWalk()),
                         );
                       },
                     ),
@@ -97,7 +98,6 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                     ),
-
                     FutureBuilder<List<PostModel>>(
                       future: DatabaseService.getPosts(),
                       builder: (context, snapshot) {
