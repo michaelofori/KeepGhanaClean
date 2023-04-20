@@ -25,20 +25,7 @@ class _LeagueTableState extends State<LeagueTable> {
         centerTitle: true,
         elevation: 0.1,
         backgroundColor: Theme.of(context).accentColor,
-        actions: const <Widget>[
-          // IconButton(
-          //   icon: const Icon(
-          //     Icons.settings,
-          //     color: Colors.white,
-          //   ),
-          //   onPressed: () {
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(builder: (context) => SettingsPage()),
-          //     );
-          //   },
-          // )
-        ],
+   
       ),
       body: Column(
         children: [

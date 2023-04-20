@@ -8,10 +8,10 @@ import 'package:keepghanaclean/pages/instructions_page.dart';
 import 'package:keepghanaclean/pages/league_table.dart';
 import 'package:keepghanaclean/pages/location_sites.dart';
 import 'package:keepghanaclean/pages/login_screen.dart';
-import 'package:keepghanaclean/pages/redeemproducts.dart';
 import 'package:keepghanaclean/pages/settings.dart';
 import 'package:keepghanaclean/pages/splash.dart';
 import 'package:keepghanaclean/pages/upload.dart';
+import 'package:keepghanaclean/points/rewardScreen.dart';
 import 'firebase_options.dart';
 import 'model/user_model.dart';
 import 'news/viewsnews/homepage.dart';
@@ -311,7 +311,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               Navigator.push(
                 context,
                 //  MaterialPageRoute(builder: (context) => UserScreen()),
-                MaterialPageRoute(builder: (context) => RedeemProduct()),
+                MaterialPageRoute(builder: (context) => const rewardScreen()),
               );
             },
             leading: const Icon(Icons.redeem_outlined),

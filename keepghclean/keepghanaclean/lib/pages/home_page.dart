@@ -27,9 +27,6 @@ class HomePage extends StatelessWidget {
   _signOut() async {
     await _firebaseAuth.signOut();
   }
-
-  //final user = FirebaseAuth.instance.currentUser!;
-
   // sign user out method
   void signUserOut() {
     FirebaseAuth.instance.signOut();
@@ -58,9 +55,6 @@ class HomePage extends StatelessWidget {
             builder: ((context, snapshot) => Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    // const SizedBox(
-                    //   height: 10,
-                    // ),
                     ActivityCard(
                       image: "assets/images/run.gif",
                       bottomValue: 20,
@@ -100,13 +94,6 @@ class HomePage extends StatelessWidget {
                               color: Colors.black,
                             ),
                           ),
-
-                          // Text(
-                          //   "TRENDS FOR YOU",
-                          //   style: TextStyle(
-                          //     color: Colors.black,
-                          //   ),
-                          // ),
                         ],
                       ),
                     ),
@@ -129,7 +116,6 @@ class HomePage extends StatelessWidget {
                         }
                       },
                     ),
-
                     SizedBox(height: size.height * 0.05)
                   ],
                 ))),
