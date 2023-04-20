@@ -14,7 +14,7 @@ import 'package:keepghanaclean/pages/upload.dart';
 import 'package:keepghanaclean/points/rewardScreen.dart';
 import 'firebase_options.dart';
 import 'model/user_model.dart';
-import 'news/viewsnews/homepage.dart';
+//import 'news/viewsnews/homepage.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -289,20 +289,20 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             leading: const Icon(Icons.leaderboard_sharp),
             title: const Text("League Table"),
           ),
-          ListTile(
-            selected: _pageColors[4],
-            onTap: () {
-              _setPage(context, 4);
+          // ListTile(
+          //   selected: _pageColors[4],
+          //   onTap: () {
+          //     _setPage(context, 4);
 
-              Navigator.push(
-                context,
-              //  MaterialPageRoute(builder: (context) => LeagueTable()),
-                 MaterialPageRoute(builder: (context) => NewsPage()),
-              );
-            },
-            leading: const Icon(Icons.newspaper_outlined),
-            title: const Text("News"),
-          ),
+          //     Navigator.push(
+          //       context,
+          //     //  MaterialPageRoute(builder: (context) => LeagueTable()),
+          //        MaterialPageRoute(builder: (context) => NewsPage()),
+          //     );
+          //   },
+          //   leading: const Icon(Icons.newspaper_outlined),
+          //   title: const Text("News"),
+          // ),
           ListTile(
             selected: _pageColors[5],
             onTap: () {
