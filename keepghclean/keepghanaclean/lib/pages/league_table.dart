@@ -47,32 +47,32 @@ class _LeagueTableState extends State<LeagueTable> {
                   children: const [
                     ListTile(
                       leading: Icon(Icons.person_2_outlined),
-                      title: Text('aliceli'),
+                      title: Text('Michael Ofori'),
                       trailing: Text("15.2 km"),
                     ),
                     ListTile(
                       leading: Icon(Icons.person_2_outlined),
-                      title: Text('janedoe'),
+                      title: Text('Prince Sefa'),
                       trailing: Text("12.6 km"),
                     ),
                     ListTile(
                       leading: Icon(Icons.person_2_outlined),
-                      title: Text('johndoe'),
+                      title: Text('Bright Augustt'),
                       trailing: Text("10.5 km"),
                     ),
                     ListTile(
                       leading: Icon(Icons.person_2_outlined),
-                      title: Text('aliceli'),
+                      title: Text('Emmanualla Turkson'),
                       trailing: Text("9.8 km"),
                     ),
                     ListTile(
                       leading: Icon(Icons.person_2_outlined),
-                      title: Text('johndoe'),
+                      title: Text('Adowa Ofori'),
                       trailing: Text("8.2 km"),
                     ),
                     ListTile(
                       leading: Icon(Icons.person_2_outlined),
-                      title: Text('bobsmith'),
+                      title: Text('Elorm Ahiator'), 
                       trailing: Text("6.7 km"),
                     ),
                                       

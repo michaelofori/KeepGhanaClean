@@ -94,6 +94,7 @@ dependencies:
   flutter_getit: ^1.2.1
   webview_flutter: ^4.0.7
   coupon_uikit: ^0.2.0
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -101,6 +102,13 @@ dev_dependencies:
 
   flutter_lints: ^2.0.0
   my_app: ^1.0.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/1024.png"
+  adapative_icon_foreground: "assets/images/1024.png"
+  adapative_icon_background: "assets/images/1024.png"
 
 flutter_intl:
   enabled: true  
