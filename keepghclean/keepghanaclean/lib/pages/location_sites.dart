@@ -14,7 +14,7 @@ class RecycleSites extends StatefulWidget {
 
 class MapSampleState extends State<RecycleSites> {
   //Mode _mode = Mode.overlay;
- // Completer<GoogleMapController> _controller = Completer<GoogleMapController>();
+  // Completer<GoogleMapController> _controller = Completer<GoogleMapController>();
 
   TextEditingController _originController = TextEditingController();
   TextEditingController _destinationController = TextEditingController();
@@ -82,18 +82,17 @@ class MapSampleState extends State<RecycleSites> {
   }
 
 //new
-String address = "null";
+  String address = "null";
   String autocompletePlace = "null";
-  
+
   Prediction? initialValue;
 
-  
   final TextEditingController _controller = TextEditingController();
   //new
 
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: const Text('Recycle Sites'),
       ),
@@ -110,59 +109,21 @@ String address = "null";
               if (result != null) {
                 setState(() {
                   autocompletePlace = result.result.formattedAddress ?? "";
-                });
+                },);
               }
             },
           ),
-          // OutlinedButton(
-          //   child: Text('show dialog'.toUpperCase()),
-          //   onPressed: () {
-          //     showDialog(
-          //       context: context,
-          //       builder: (context) {
-          //         return AlertDialog(
-          //           title: const Text('Example'),
-          //           content: PlacesAutocomplete(
-          //             apiKey: "AIzaSyCsDG0wJUNnciSuJpnVd95JcxxmtOtgBJA",
-          //             searchHintText: "Search for drop point",
-          //             mounted: mounted,
-          //             showBackButton: false,
-          //             initialValue: initialValue,
-          //             onSuggestionSelected: (value) {
-          //               setState(() {
-          //                 autocompletePlace =
-          //                     value.structuredFormatting?.mainText ?? "";
-          //                 initialValue = value;
-          //               });
-          //             },
-          //             onGetDetailsByPlaceId: (value) {
-          //               setState(() {
-          //                 address = value?.result.formattedAddress ?? "";
-          //               });
-          //             },
-          //           ),
-          //           actions: <Widget>[
-          //             TextButton(
-          //               child: const Text('Done'),
-          //               onPressed: () => Navigator.of(context).pop(),
-          //             ),
-          //           ],
-          //         );
-          //       },
-          //     );
-          //   },
-          // ),
           const Spacer(),
           const Padding(
             padding: EdgeInsets.all(8.0),
-            // child: Text(
-            //   "Monitor from our web apge",
-            //   textAlign: TextAlign.center,
-            //   textScaleFactor: 1.2,
-            //   style: TextStyle(
-            //     color: Colors.grey,
-            //   ),
-            // ),
+            child: Text(
+              "View from our web page",
+              textAlign: TextAlign.center,
+              textScaleFactor: 1.2,
+              style: TextStyle(
+                color: Colors.grey,
+              ),
+            ),
           ),
           TextButton(
             onPressed: () => Clipboard.setData(
@@ -178,6 +139,7 @@ String address = "null";
           ),
           const Spacer(),
           Center(
+            //Map
             child: ElevatedButton(
               child: const Text('View Recycle Sites '),
               onPressed: () async {
@@ -211,18 +173,162 @@ String address = "null";
               },
             ),
           ),
+          //Site 1
+          Container(
+            padding: const EdgeInsets.only(top: 20.0, bottom: 20),
+            child: Row(
+              children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Icon(Icons.location_city_outlined),
+                ),
+                ElevatedButton(
+                  child: const Text('Recycle Site 1'),
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return MapLocationPicker(
+                            apiKey: "AIzaSyCsDG0wJUNnciSuJpnVd95JcxxmtOtgBJA",
+                            canPopOnNextButtonTaped: true,
+                            currentLatLng: const LatLng(5.672969, -0.112642),
+                            onNext: (GeocodingResult? result) {
+                              if (result != null) {
+                                setState(
+                                  () {
+                                    address = result.formattedAddress ?? "";
+                                  },
+                                );
+                              }
+                            },
+                            onSuggestionSelected:
+                                (PlacesDetailsResponse? result) {
+                              if (result != null) {
+                                setState(() {
+                                  autocompletePlace =
+                                      result.result.formattedAddress ?? "";
+                                });
+                              }
+                            },
+                          );
+                        },
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+          //site1
+          //site 2
+               Container(
+            padding: const EdgeInsets.only(top: 20.0, bottom: 20),
+            child: Row(
+              children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Icon(Icons.location_city_outlined),
+                ),
+                ElevatedButton(
+                  child: const Text('Recycle Site 2'),
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return MapLocationPicker(
+                            apiKey: "AIzaSyCsDG0wJUNnciSuJpnVd95JcxxmtOtgBJA",
+                            canPopOnNextButtonTaped: true,
+                            currentLatLng: const LatLng(5.860127, 0.064150),
+                            onNext: (GeocodingResult? result) {
+                              if (result != null) {
+                                setState(
+                                  () {
+                                    address = result.formattedAddress ?? "";
+                                  },
+                                );
+                              }
+                            },
+                            onSuggestionSelected:
+                                (PlacesDetailsResponse? result) {
+                              if (result != null) {
+                                setState(() {
+                                  autocompletePlace =
+                                      result.result.formattedAddress ?? "";
+                                });
+                              }
+                            },
+                          );
+                        },
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+          //site 2
+          //site 3
+               Container(
+            padding: const EdgeInsets.only(top: 20.0, bottom: 20),
+            child: Row(
+              children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Icon(Icons.location_city_outlined),
+                ),
+                ElevatedButton(
+                  child: const Text('Recycle Site 3'),
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return MapLocationPicker(
+                            apiKey: "AIzaSyCsDG0wJUNnciSuJpnVd95JcxxmtOtgBJA",
+                            canPopOnNextButtonTaped: true,
+                            currentLatLng: const LatLng(5.672969, -0.112642),
+                            onNext: (GeocodingResult? result) {
+                              if (result != null) {
+                                setState(
+                                  () {
+                                    address = result.formattedAddress ?? "";
+                                  },
+                                );
+                              }
+                            },
+                            onSuggestionSelected:
+                                (PlacesDetailsResponse? result) {
+                              if (result != null) {
+                                setState(() {
+                                  autocompletePlace =
+                                      result.result.formattedAddress ?? "";
+                                });
+                              }
+                            },
+                          );
+                        },
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+          //site 3
           const Spacer(),
           ListTile(
             title: Text("Location Site Address: $address"),
           ),
-          ListTile(
-            title: Text("Autocomplete Address: $autocompletePlace"),
-          ),
+          // ListTile(
+          //   title: Text("Autocomplete Address: $autocompletePlace"),
+          // ),
           const Spacer(
             flex: 3,
           ),
         ],
       ),
-    ); 
+    );
   }
 }

@@ -282,7 +282,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => LeagueTable()),
+                MaterialPageRoute(builder: (context) => const LeagueTable()),
                 // MaterialPageRoute(builder: (context) => const HomePAge2()),
               );
             },

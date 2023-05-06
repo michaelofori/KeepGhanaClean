@@ -11,9 +11,20 @@ class InstructionPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 46, 90, 184),
-        title: const AppBarTitle(
-          leadingTitle: 'FAQs',
+        title: const Text(
+          "F A Q s",
+          style: TextStyle(
+            color: Colors.black,
+            fontFamily: "Signatra",
+            fontSize: 30.0,
+          ),
         ),
+        centerTitle: true,
+        elevation: 0.1,
+        //backgroundColor: Theme.of(context).accentColor,
+        // title: const AppBarTitle(
+        //   leadingTitle: 'FAQs',
+        // ),
         actions: const [
           Icon(
             Icons.ac_unit,
@@ -32,50 +43,70 @@ class InstructionPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'How to add a car',
+                'How to find a location center',
                 style: headline6,
               ),
               Text(
-                'Go to the side drawer and click upload car. Then tap on the car icon to upload a picture of the car from the device. Fill in the other fields and click upload.',
+                'Go to the recycle sites page from the app navigation bar. Type the name of the prefered recycle site or view the recycle the sites closet via the full screen maps page.',
                 style: bodyText1,
               ),
-              const Divider(height: 16),
+              const Divider(
+                height: 16,
+                thickness: 5,
+                color: Color.fromARGB(255, 51, 76, 122),
+              ),
               Text(
-                'How to view a car',
+                'How to redem tokens',
                 style: headline6,
               ),
               Text(
-                'Tap on the arrow button on the right corner to view the specifications of the car.',
+                'Go the the rewards screen from the navigation bar. Your current points would be displayed. Select the voucher you would like to redem.',
                 style: bodyText1,
               ),
-               const Divider(height: 16),
+              const Divider(
+                height: 16,
+                thickness: 5,
+                color: Color.fromARGB(255, 51, 76, 122),
+              ),
               Text(
-                'How to edit',
+                'How to upload feed',
                 style: headline6,
               ),
               Text(
-                'On the details screen, press the edit icon. Click the car icon to upload a new image and fill in the desired details and submit. ',
+                'Click on the camera icon on the app bar. Select "Camera" or "Galary" to upload an image. ',
                 style: bodyText1,
               ),
-              const Divider(height: 16),
+              const Divider(
+                height: 16,
+                thickness: 5,
+                color: Color.fromARGB(255, 51, 76, 122),
+              ),
               Text(
-                'How delete car',
+                'How to track steps',
                 style: headline6,
               ),
               Text(
-                'On the details screen, press the delete icon.The car would be deleted',
+                'Click on the the step activity tracker. The application would automatically track your steps.',
                 style: bodyText1,
               ),
-              const Divider(height: 16),
-               const Divider(height: 16),
+              const Divider(
+                height: 16,
+                thickness: 5,
+                color: Color.fromARGB(255, 51, 76, 122),
+              ),
               Text(
-                'How buy a car',
+                'How to set timer.',
                 style: headline6,
               ),
               Text(
-                'On the details screen, press the contact icon to contact the seller.',
+                'CLick on the timer activity card. You can scroll the timer to slect the time and tap start.',
                 style: bodyText1,
               ),
+              const Divider(
+                height: 16,
+                thickness: 5,
+                color: Color.fromARGB(255, 51, 76, 122),
+              ), 
             ],
           ),
         ),

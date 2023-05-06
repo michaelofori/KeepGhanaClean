@@ -102,13 +102,19 @@ class HomePage extends StatelessWidget {
                       future: DatabaseService.getPosts(),
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
+                            
                           return Expanded(
                             child: ListView.builder(
+                              
                               //TODO fix height issue (card)
                               scrollDirection: Axis.horizontal,
                               itemCount: snapshot.data?.length,
+                              
                               itemBuilder: (context, index) => PostTile(
-                                  post: snapshot.data!.elementAt(index)),
+                                post: snapshot.data!.elementAt(index),
+                                
+                              ),
+                              
                             ),
                           );
                         } else {
