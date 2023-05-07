@@ -14,7 +14,9 @@ class AboutUsPage extends StatelessWidget {
           ? await launch(_url)
           : throw 'Could not launch $_url';
     }
+
     return Scaffold(
+       backgroundColor: Color.fromARGB(255, 140, 151, 165), 
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 46, 90, 184),
         actions: const [
@@ -34,22 +36,19 @@ class AboutUsPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: Padding(
-        
         padding: const EdgeInsets.all(16),
-        
         child: Column(
-          
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const Spacer(),
             SizedBox(
-                height: 150,
-                child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/1024.png"),
-                  radius: 70.0,
-                ),
+              height: 150,
+              child: CircleAvatar(
+                backgroundImage: AssetImage("assets/images/1024.png"),
+                radius: 70.0,
               ),
+            ),
             const SizedBox(
               height: 8,
             ),

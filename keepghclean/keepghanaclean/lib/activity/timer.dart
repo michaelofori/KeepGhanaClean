@@ -92,6 +92,7 @@ class _activityWalkState extends State<timer> with TickerProviderStateMixin{
 
 
   Widget timer() {
+    
     return Column(
       children: [
         Expanded(
@@ -388,21 +389,23 @@ class _activityWalkState extends State<timer> with TickerProviderStateMixin{
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
+       backgroundColor: Color.fromARGB(255, 168, 176, 187),  
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
           'SET  YOUR   GOAL',
           style: TextStyle(
             fontWeight: FontWeight.w800,
-            fontFamily: "Signatra",
+            fontFamily: "Times New Roman",
               fontSize: 30.0,
           ),
         ),
       
         bottom: TabBar(
           tabs: const [
-            Text('Timer'),
+            Text('Lets Clean'), 
             // Text('Stopwatch'),
           ],
           controller: tb,

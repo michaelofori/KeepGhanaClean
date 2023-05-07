@@ -82,8 +82,8 @@ class MapSampleState extends State<RecycleSites> {
   }
 
 //new
-  String address = "null";
-  String autocompletePlace = "null";
+  String address = "Not Selected";
+  String autocompletePlace = "Not Selected";   
 
   Prediction? initialValue;
 
@@ -92,8 +92,10 @@ class MapSampleState extends State<RecycleSites> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
-      appBar: AppBar(
+       backgroundColor: Color.fromARGB(255, 201, 203, 206),
+      appBar: AppBar( 
         title: const Text('Recycle Sites'),
       ),
       body: Column(
@@ -178,7 +180,7 @@ class MapSampleState extends State<RecycleSites> {
             padding: const EdgeInsets.only(top: 20.0, bottom: 20),
             child: Row(
               children: [
-                Align(
+                const Align(
                   alignment: Alignment.centerLeft,
                   child: Icon(Icons.location_city_outlined),
                 ),
@@ -270,52 +272,52 @@ class MapSampleState extends State<RecycleSites> {
           ),
           //site 2
           //site 3
-               Container(
-            padding: const EdgeInsets.only(top: 20.0, bottom: 20),
-            child: Row(
-              children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Icon(Icons.location_city_outlined),
-                ),
-                ElevatedButton(
-                  child: const Text('Recycle Site 3'),
-                  onPressed: () async {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return MapLocationPicker(
-                            apiKey: "AIzaSyCsDG0wJUNnciSuJpnVd95JcxxmtOtgBJA",
-                            canPopOnNextButtonTaped: true,
-                            currentLatLng: const LatLng(5.672969, -0.112642),
-                            onNext: (GeocodingResult? result) {
-                              if (result != null) {
-                                setState(
-                                  () {
-                                    address = result.formattedAddress ?? "";
-                                  },
-                                );
-                              }
-                            },
-                            onSuggestionSelected:
-                                (PlacesDetailsResponse? result) {
-                              if (result != null) {
-                                setState(() {
-                                  autocompletePlace =
-                                      result.result.formattedAddress ?? "";
-                                });
-                              }
-                            },
-                          );
-                        },
-                      ),
-                    );
-                  },
-                ),
-              ],
-            ),
-          ),
+            //    Container(
+            // padding: const EdgeInsets.only(top: 20.0, bottom: 20),
+            // child: Row(
+            //   children: [
+                // Align(
+                //   alignment: Alignment.centerLeft,
+                //   child: Icon(Icons.location_city_outlined),
+                // ),
+                // ElevatedButton(
+                //   child: const Text('Recycle Site 3'),
+                //   onPressed: () async {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) {
+                //           return MapLocationPicker(
+                //             apiKey: "AIzaSyCsDG0wJUNnciSuJpnVd95JcxxmtOtgBJA",
+                //             canPopOnNextButtonTaped: true,
+                //             currentLatLng: const LatLng(5.672969, -0.112642),
+                //             onNext: (GeocodingResult? result) {
+                //               if (result != null) {
+                //                 setState(
+                //                   () {
+                //                     address = result.formattedAddress ?? "";
+                //                   },
+                //                 );
+                //               }
+                //             },
+                //             onSuggestionSelected:
+                //                 (PlacesDetailsResponse? result) {
+                //               if (result != null) {
+                //                 setState(() {
+                //                   autocompletePlace =
+                //                       result.result.formattedAddress ?? "";
+                //                 });
+                //               }
+                //             },
+                //           );
+                //         },
+                //       ),
+                //     );
+                //   },
+                // ),
+          //     ],
+          //   ),
+          // ),
           //site 3
           const Spacer(),
           ListTile(

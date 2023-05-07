@@ -1,12 +1,16 @@
 library activity_recognition;
 
 import 'package:flutter/material.dart';
+import 'package:keepghanaclean/activity/color_extension.dart';
 import 'dart:async';
 import 'dart:math';
 import 'package:pedometer/pedometer.dart';
 import 'package:fl_chart/fl_chart.dart';
 import '../constants/colors_pallete.dart';
+import 'app_colors.dart';
+
 part 'activity_recognition_domain.dart';
+
 
 String formatDate(DateTime d) {
   return d.toString().substring(0, 19);
@@ -14,18 +18,32 @@ String formatDate(DateTime d) {
 
 class activityWalk extends StatefulWidget {
   activityWalk({super.key});
-  
-  List<Color> get availableColors => const <Color>[
-        ColorPallete.fontsColor,
+
+    List<Color> get availableColors => const <Color>[
+        AppColors.contentColorPurple,
+        AppColors.contentColorYellow,
+        AppColors.contentColorBlue,
+        AppColors.contentColorOrange,
+        Color.fromARGB(255, 73, 101, 151),
+        Color.fromARGB(255, 25, 114, 187),
       ];
-  final Color barBackgroundColor = ColorPallete.primaryColor.withOpacity(0.3);
-  final Color barColor = ColorPallete.chartsColor;
-  final Color touchedBarColor = ColorPallete.chartsColor;
+ 
+  final Color barBackgroundColor =
+      Color.fromARGB(255, 37, 27, 90).darken().withOpacity(0.3);
+  final Color barColor = Color.fromARGB(255, 17, 53, 105);
+  final Color touchedBarColor = Color.fromARGB(255, 117, 44, 10);
+  
+  // List<Color> get availableColors => const <Color>[
+  //       ColorPallete.fontsColor,
+  //     ];
+  // final Color barBackgroundColor = ColorPallete.primaryColor.withOpacity(0.3);
+  // final Color barColor = ColorPallete.chartsColor;
+  // final Color touchedBarColor = ColorPallete.chartsColor;
 
   @override
   State<activityWalk> createState() => _activityWalkState();
 }
-
+  
 class _activityWalkState extends State<activityWalk> {
   final Duration animDuration = const Duration(milliseconds: 250);
   int touchedIndex = -1;
@@ -34,7 +52,7 @@ class _activityWalkState extends State<activityWalk> {
   late Stream<PedestrianStatus> _pedestrianStatusStream;
   String _status = 'Inactive', _steps = 'Inactive';
 
-  @override
+  @override 
   void initState() {
     super.initState();
     initPlatformState();
@@ -84,6 +102,7 @@ class _activityWalkState extends State<activityWalk> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 140, 151, 165), 
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
@@ -102,7 +121,7 @@ class _activityWalkState extends State<activityWalk> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'My Observations',
+              'My Distance',
               style: TextStyle(
                   fontSize: 30,
                   color: Colors.black,
@@ -112,16 +131,20 @@ class _activityWalkState extends State<activityWalk> {
               height: 4,
             ),
             const Text(
-              'Statistics',
+              'Steps', 
               style: TextStyle(
-                color: ColorPallete.fontsColor,
-                fontSize: 15,
+                color: Color.fromARGB(255, 163, 51, 24),
+                fontSize:20,
                 fontWeight: FontWeight.w800,
               ),
             ),
             const SizedBox(
               height: 38,
             ),
+            // Expanded(child: 
+            
+            
+            // ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -131,23 +154,46 @@ class _activityWalkState extends State<activityWalk> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: Align(
-                alignment: Alignment.topRight,
-                child: IconButton(
-                  icon: const Icon(
-                    Icons.more_vert,
-                  ),
-                  onPressed: () {
-                    _showBottomSheet(context);
-                  },
+                Padding(
+            padding: const EdgeInsets.all(8),
+            child: Align(
+              alignment: Alignment.topRight,
+              child: IconButton(
+                icon: Icon(
+                  isPlaying ? Icons.pause : Icons.play_arrow,
+                  color: AppColors.contentColorGreen,
                 ),
+                onPressed: () {
+                  setState(() {
+                    isPlaying = !isPlaying;
+                    if (isPlaying) {
+                      refreshState();
+                    }
+                  });
+                },
               ),
             ),
+                ),
+         
+            //three dots point
+            // Padding(
+            //   padding: const EdgeInsets.all(8),
+            //   child: Align(
+            //     alignment: Alignment.topRight,
+            //     child: IconButton(
+            //       icon: const Icon(
+            //         Icons.more_vert,
+            //       ),
+            //       onPressed: () {
+            //         _showBottomSheet(context);
+            //       },
+            //     ),
+            //   ),
+            // ),
             const SizedBox(
               height: 12,
             ),
+            //Steps
             const Text(
               'Steps taken:',
               style: TextStyle(fontSize: 20),
@@ -335,7 +381,7 @@ class _activityWalkState extends State<activityWalk> {
 
   Widget getTitles(double value, TitleMeta meta) {
     const style = TextStyle(
-      color: Colors.grey,
+      color: Color.fromARGB(255, 173, 14, 14),
       fontWeight: FontWeight.bold,
       fontSize: 14,
     );

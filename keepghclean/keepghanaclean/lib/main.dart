@@ -230,29 +230,29 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             leading: const Icon(Icons.home),
             title: const Text("Home"),
           ),
-          ListTile(
-            selected: _pageColors[1],
-            onTap: () {
-              _setPage(context, 1);
-              // Navigator.pop(context);
-              // setState(
-              //   () {
-              //     currentIndex = 1;
-              //     cartColor = true;
-              //     homeColor = false;
-              //     aboutColor = false;
-              //     contactUsColor = false;
-              //     logOut = false;
-              // },
-              // );
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => const MyStatefulWidget()),
-              // );
-            },
-            leading: const Icon(Icons.topic),
-            title: const Text("My Coupons"),
-          ),
+          // ListTile(
+          //   selected: _pageColors[1],
+          //   onTap: () {
+          //     _setPage(context, 1);
+          //     // Navigator.pop(context);
+          //     // setState(
+          //     //   () {
+          //     //     currentIndex = 1;
+          //     //     cartColor = true;
+          //     //     homeColor = false;
+          //     //     aboutColor = false;
+          //     //     contactUsColor = false;
+          //     //     logOut = false;
+          //     // },
+          //     // );
+          //     // Navigator.push(
+          //     //   context,
+          //     //   MaterialPageRoute(builder: (context) => const MyStatefulWidget()),
+          //     // );
+          //   },
+          //   leading: const Icon(Icons.topic),
+          //   title: const Text("My Coupons"),
+          // ),
           ListTile(
             selected: _pageColors[2],
             onTap: () {

@@ -14,6 +14,7 @@ class _rewardScreenState extends State<rewardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       backgroundColor: Color.fromARGB(255, 153, 159, 167),   
       appBar: AppBar(
         title: const Text(
           "Points",
@@ -121,11 +122,11 @@ class _rewardScreenState extends State<rewardScreen> {
                   backgroundColor: Color.fromARGB(255, 85, 106, 165),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(50),
-                    child: Image.asset("assets/logo/total.png"),
+                    child: Image.asset("assets/logo/shop.png"),
                   ),
                 ),
                 title: const Text(
-                  'Total Ghana shopping Voucher',
+                  'Shoprite Ghana',
                 ),
                 subtitle: const Text('Redem for an item in any store.'),
                 trailing: const Icon(Icons.more_vert),

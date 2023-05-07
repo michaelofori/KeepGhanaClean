@@ -115,7 +115,7 @@ class DatabaseService{
   static Future<void> getLeaderboard() async {}
 
   static Future<String> uploadImage(File file) async {
-    TaskSnapshot result = await storage.ref("userId/image").putFile(file);
+    TaskSnapshot result = await storage.ref("userId/image/${file.hashCode}").putFile(file);
     return result.ref.getDownloadURL();
   }
 
