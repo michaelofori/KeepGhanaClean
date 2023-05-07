@@ -131,6 +131,26 @@ class _rewardScreenState extends State<rewardScreen> {
                 subtitle: const Text('Redem for an item in any store.'),
                 trailing: const Icon(Icons.more_vert),
               ),
+               const SizedBox(height: 14),
+              ListTile(
+                shape: RoundedRectangleBorder(
+                  //<-- SEE HERE
+                  side: const BorderSide(width: 2),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                leading: CircleAvatar(
+                  backgroundColor: Color.fromARGB(255, 85, 106, 165),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(50),
+                    child: Image.asset("assets/logo/starbites.jpg"),
+                  ),
+                ),
+                title: const Text(
+                  'Star Bites Ghana',
+                ),
+                subtitle: const Text('Redem for an item in any store.'),
+                trailing: const Icon(Icons.more_vert),
+              ),
             ],
           ),
         ),
